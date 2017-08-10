@@ -71,6 +71,18 @@ class Login implements DbModelInterface {
             return false;
     }
 
+    /**
+     * @param $email string
+     * @return int
+     */
+    public function getIdByEmail() {
+        $app = Application::instance();
+        $sql = 'SELECT id FROM users WHERE email LIKE '.$this->email;
+        $result = $app->db()->getArrayBySqlQuery($sql);
+
+        return $result[0]['id'];
+    }
+
 
     public function find($id)
     {
