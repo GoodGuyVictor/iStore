@@ -10,14 +10,12 @@ namespace simpleengine\controllers;
 
 
 use simpleengine\core\Application;
-use simpleengine\models\DefaultModel;
 
 class DefaultController extends AbstractController
 {
     public function actionIndex()
     {
         session_start();
-
         if(key_exists('email', $_SESSION) && $_SESSION['email'] != "") {
             $app = Application::instance();
             $sql = "SELECT * FROM users WHERE email='".$_SESSION['email']."'";
@@ -36,6 +34,8 @@ class DefaultController extends AbstractController
     }
 
     public function actionLogin(){
-        echo 345;
+
     }
+
+
 }
