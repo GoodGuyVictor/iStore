@@ -14,7 +14,7 @@
         $(document).ready(function () {
             $('#logout').on('click', function () {
                 $.ajax({
-                    url: '/user/login/',
+                    url: '/user/logout/',
                     type: 'POST',
                     data: {"logout": true}
                 })
