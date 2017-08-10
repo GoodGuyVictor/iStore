@@ -28,7 +28,7 @@ class UserController extends AbstractController
             if(key_exists('password', $_POST) && $_POST['password'] != "") {
                 $loginingUser = new Login($_POST['email'], $_POST['password']);
                 $error = $loginingUser->auth();
-
+                echo $error;
                 if($error) {
                     $_SESSION['error'] = $error;
                 }else {

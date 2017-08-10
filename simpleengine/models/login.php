@@ -47,7 +47,7 @@ class Login implements DbModelInterface {
      */
     private function emailExists() {
         $app = Application::instance();
-        $sql = 'SELECT * FROM users WHERE email LIKE '.$this->email;
+        $sql = "SELECT * FROM users WHERE email LIKE '".$this->email."'";
         $result = $app->db()->getArrayBySqlQuery($sql);
 
         if(!empty($result))
@@ -62,7 +62,7 @@ class Login implements DbModelInterface {
      */
     private function passwordMatches() {
         $app = Application::instance();
-        $sql = 'SELECT password FROM users WHERE email LIKE '.$this->email;
+        $sql = "SELECT password FROM users WHERE email LIKE '".$this->email."'";
         $result = $app->db()->getArrayBySqlQuery($sql);
 
         if($result[0]['password'] == $this->password)
@@ -77,7 +77,7 @@ class Login implements DbModelInterface {
      */
     public function getIdByEmail() {
         $app = Application::instance();
-        $sql = 'SELECT id FROM users WHERE email LIKE '.$this->email;
+        $sql = "SELECT id FROM users WHERE email LIKE '".$this->email."'";
         $result = $app->db()->getArrayBySqlQuery($sql);
 
         return $result[0]['id'];
