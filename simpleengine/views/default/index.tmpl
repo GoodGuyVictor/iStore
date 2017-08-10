@@ -1,0 +1,559 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brand</title>
+    <!--Bootstrap 3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../public/css/index/css/styles.css">
+    <script>
+        $(document).ready(function () {
+            $('#login-btn').on('click', function () {
+                var email = $('#email').val();
+                var pass = $('#password').val();
+                $.ajax({
+                    type: 'post',
+                    url: '/user/login/',
+                    data: {'email': email, 'password': pass}
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+      <div class="desktop-header">
+       <div class="wrapper">
+           <div class="row">
+               <div class="col-md-3">
+                    <div class="logo">
+                       <a href="#" style="color: black; text-decoration: none;">
+                            <div class="banner fLeft">
+                                <img src="../../../public/pics/index/Group 2.png" alt="...">
+                            </div>
+                            <div class="logo-text fLeft">
+                                BRAN<span style="font-weight: bold; color: #F38191;">D</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search-box">
+                        <div class="row">    
+                            <div class="col-md-2" style="padding: 0;">                    
+                                <div class="drop-down">
+                                    <button class="drop-down-btn">Browse <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                    <div class="drop-down-menu">
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7" style="padding: 0;">
+                                <div class="search-bar">
+                                    <input id="header-search-bar" type="text" placeholder="Search for item...">
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="padding: 0;">
+                                <div class="search-button">
+                                    <button id="header-search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="col-md-3">
+                    <div class="account">
+                       <div class="row">
+                           <div class="col-sm-3">
+                             <a href="cart/">
+                                <div id="cart">
+                                    <img src="../../../public/pics/index/Forma 1.png" alt="...">
+                                </div>
+                               </a>
+                            </div>
+                            <div class="col-sm-8">
+                                <div id="myAccount">
+                                    <button id="myAccount-btn">My Account <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                    <div class="myAccount-menu">
+                                        <form>
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" />
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password" />
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <button id="login-btn" type="submit" class="btn">Log in</button>
+                                                </div>
+                                                <div class="col-sm-1" style="padding-top:5px;"><b>or</b></div>
+                                                <div class="col-sm-5" style="padding-top:5px;">
+                                                    <a href="signup/" style="font-size:120%;"><b><u>Sign up</u></b></a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <hr style="margin-bottom: 17px;">
+        <nav id="header-menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">KIDS</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">FUATURE</a></li>
+                <li><a href="#">HOT DEAL</a></li>
+            </ul>
+        </nav>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="responsive-header">
+            <div class="left-container fLeft">
+                <a href="#">
+                    <div class="logo-responsive">
+                        <img src="../../../public/pics/index/Group 2.png" alt="...">
+                    </div>
+                </a>
+                <div class="search-button-responsive">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="right-container fRight">
+                <button class="burger-menu fLeft">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                    <div class="account-responsive fLeft">
+                        <img src="../../../public/pics/index/account-responsive.png" alt="...">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="cart-responsive fLeft">
+                        <img src="../../../public/pics/index/cart-resp.png" alt="...">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="slider">
+            <img id="slider-picture" src="../../../public/pics/index/Slider.png" alt="..." style="width: 1170px;">
+        </section>
+        <section id="category">
+           <div class="desktop-category">
+              <div class="wrapper">
+                 <div class="row">
+                     <div class="col-md-6">
+                         <div class="left-column">
+                             <div class="upper-banner">
+                                 <img src="../../../public/pics/index/Banner-3.png" alt="..." class="category-picture">
+                                 <img id="hot-deal-for-men" src="../../../public/pics/index/BADGE.png" alt="..." style="width: 150px;">
+                             </div>
+                             <div class="lower-banner">
+                                 <img src="../../../public/pics/index/Banner-1.png" alt="..." class="category-picture">
+                                 <img id="luxurious-accesories" src="../../../public/pics/index/BADGE copy 3.png" alt="..." style="width: 150px;">
+                             </div>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="right-column">
+                              <div class="upper-banner">
+                                  <img src="../../../public/pics/index/Banner-2.png" alt="..." class="category-picture">
+                                  <img id="offer-women" src="../../../public/pics/index/BADGE copy.png" alt="..." style="width: 150px;">
+                              </div>
+                              <div class="lower-banner">
+                                  <img src="../../../public/pics/index/Banner.png" alt="..." class="category-picture">
+                                  <img id="for-kids" src="../../../public/pics/index/BADGE copy 2.png" alt="..." style="width: 150px;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="responsive-category">
+              <div class="wrapper">
+                <div class="upper-banners">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="category-banner-resp">
+                        <img src="../../../public/pics/index/cat-resp-1.png" alt="...">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="category-banner-resp">
+                        <img src="../../../public/pics/index/cat-resp-2.png" alt="...">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="category-banner-resp">
+                        <img src="../../../public/pics/index/cat-resp-3.png" alt="...">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="lower-banner">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <img src="../../../public/pics/index/cat-resp-4.png" alt="..." style="width: 100%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section id="product">
+            <div class="wrapper">
+                <hgroup>
+                    <h2><strong>Featured Items</strong></h2>
+                    <h5><span style="color: grey;">Shop for items based on what we featured in this week</span></h5>
+                </hgroup>
+                <br>
+                <br>
+                <div id="goods">
+                   <div class="upper-row">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-xs-12" style="position: relative;">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/1.png" alt="..." style="width: 100%;">
+                                <div id="1" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE WHITE T-SHIRT</strong></span></p>
+                                    <p><span class="bold pink product-price">$30.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12" style="position: relative;">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/2.png" alt="..." style="width: 100%;">
+                                <div id="2" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE RED T-SHIRT</strong></span></p>
+                                    <p><span class="bold pink product-price">$35.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12" style="position: relative;">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/3.png" alt="..." style="width: 100%;">
+                                <div id="3" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE BLUE JACKET</strong></span></p>
+                                    <p><span class="bold pink product-price">$52.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12" style="position: relative;">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/4.png" alt="..." style="width: 100%;">
+                                <div id="4" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE FLOWERED DRESS</strong></span></p>
+                                    <p><span class="bold pink product-price">$38.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="lower-row">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/5.png" alt="..." style="width: 100%;">
+                                <div id="5" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE BLACK AND WHITE DRESS</strong></span></p>
+                                    <p><span class="bold pink product-price">$39.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/6.png" alt="..." style="width: 100%;">
+                                <div id="6" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE GREY JACKET</strong></span></p>
+                                    <p><span class="bold pink product-price">$49.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/7.png" alt="..." style="width: 100%;">
+                                <div id="7" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                    <p><span class="product-name"><strong>MANGO PEOPLE BIEGE PANTS</strong></span></p>
+                                    <p><span class="bold pink product-price">$40.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="product-box">
+                                <img src="../../../public/pics/index/8.png" alt="..." style="width: 100%;">
+                                <div id="8" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <div class="product-text">
+                                  <p><span class="product-name"><strong>MANGO PEOPLE WHITE SHORTS</strong></span></p>
+                                    <p><span class="bold pink product-price">$35.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <br>
+                <button id="browse-all-btn">Browse All Products <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </section>
+        <section id="feature">
+            <div class="wrapper">
+                <div class="feature-box">
+                   <div class="row">
+                         <div class="feature-banner col-lg-8" style="padding: 0;">
+                                <img src="../../../public/pics/index/banner-4.png" alt="..." style="width: 100%; height: 500px;">
+                          </div>
+                      <div class="feature-description col-lg-4 col-md-12">
+                        <div class="col-sm-4 col-md-4 col-lg-12">
+                          <div id="feature-box-1">
+                              <div class="row">
+                                  <div class="col-lg-3 icon">
+                                      <img src="../../../public/pics/index/2-1.png" alt="...">
+                                  </div>
+                                  <div class="col-lg-9 text">
+                                      <h4>Free Dilivery</h4>
+                                      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="col-sm-4 col-md-4 col-lg-12">
+                          <div id="feature-box-2">
+                              <div class="row">
+                                  <div class="col-lg-3 icon">
+                                      <img src="../../../public/pics/index/1-1.png" alt="...">
+                                  </div>
+                                  <div class="col-lg-9 text">
+                                      <h4>Sales and discounts</h4>
+                                      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="col-sm-4 col-md-4 col-lg-12">
+                          <div id="feature-box-3">
+                              <div class="row">
+                                  <div class="col-lg-3 icon">
+                                      <img src="../../../public/pics/index/crown.png" alt="...">
+                                  </div>
+                                  <div class="col-lg-9 text">
+                                      <h4>Quality assurance</h4>
+                                      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="subscribe-responsive">
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-md-6 col-xs-6">
+                <div class="subscribe-log">
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/index/f1.png" style="width: 100%;" alt="...">
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/index/f2.png" style="width: 100%;" alt="...">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/index/f3.png" style="width: 100%;" alt="...">
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/index/f4.png" style="width: 100%;" alt="...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-6" style="text-align: center; padding: 0 50px;">
+                <hgroup>
+                    <h3>SUBSCRIBE</h3>
+                    <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                </hgroup>
+                <br>
+                <div class="email-box" style="width: 100%;">
+                  <div class="row">
+                   <div class="col-md-9 col-xs-9" style="padding: 0;">
+                      <div class="email-bar">
+                          <input type="email" style="width: 100%;" placeholder="Enter Your Email">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3" style="padding: 0;">
+                      <div class="subscribe-btn">
+                          <input type="submit" class="sub-button" value="Subscribe">
+                      </div>    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="subscribe">
+            <div class="wrapper">
+               <div class="row">
+                  <div class="left-section col-lg-7 col-md-12">
+                      <div class="row">
+                          <div class="col-lg-3 col-md-12">
+                              <div class="avatar">
+                                  <img src="../../../public/pics/index/Layer 40.png" alt="...">
+                              </div>
+                          </div>
+                          <div class="col-lg-9 col-md-12">
+                              <div class="text">
+                                  <p><strong><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
+          a pulvinar purus condimentum a. Aliquam condimentum
+                                      mattis neque sed pretium"</i></strong></p>
+                                  <span style="color: #F38191;"><strong>Bin Burhan</strong></span><br>
+                                  <span>Dhaka, Bc</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="right-section col-lg-5">
+                      <hgroup>
+                          <h3>SUBSCRIBE</h3>
+                          <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                      </hgroup>
+                      <br>
+                      <div class="email-box">
+                        <div class="row">
+                         <div class="col-md-9" style="padding: 0;">
+                            <div class="email-bar">
+                                <input type="email" style="width: 100%;" placeholder="Enter Your Email">
+                            </div>
+                          </div>
+                          <div class="col-md-3" style="padding: 0;">
+                            <div class="subscribe-btn">
+                                <input type="submit" class="sub-button" value="Subscribe">
+                            </div>    
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+       <div class="wrapper" style="padding-bottom: 50px;">
+           <div class="row">
+               <div class="col-xs-6">
+                <div class="logo-footer">
+                    <img class="fLeft" src="../../../public/pics/index/Group 2.png" alt="logo">
+                    <div class="logo-text fLeft">BRAN<span class="bold" style="color: #F38191;">D</span></div>
+                    <div style="clear: both;"></div>
+                    <br>
+                    <div class="footer-description" style="color: grey; width: 100%;">
+                        <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p> 
+                        <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+    Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div id="company">
+                                    <h5>COMPANY</h5>
+                                    <br>
+                                    <p><a href="#">Home</a></p>
+                                    <p><a href="#">Shop</a></p>
+                                    <p><a href="#">About</a></p>
+                                    <p><a href="#">How it Works</a></p>
+                                    <p><a href="#">Contact</a></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div id="information">
+                                    <h5>INFORMATION</h5>
+                                    <br>
+                                    <p><a href="#">Terms and Conditions</a></p>
+                                    <p><a href="#">Privacy Policy</a></p>
+                                    <p><a href="#">How to buy</a></p>
+                                    <p><a href="#">How to sell</a></p>
+                                    <p><a href="#">Promotion</a></p>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div id="shop-category">
+                                    <h5>SHOP CATEGORY</h5>
+                                    <br>
+                                    <p><a href="#">Men</a></p>
+                                    <p><a href="#">Women</a></p>
+                                    <p><a href="#">Child</a></p>
+                                    <p><a href="#">Apparel</a></p>
+                                    <p><a href="#">Browse all</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div id="copyright">
+         <div class="wrapper">
+           <div class="rights fLeft" style="font-size: 110%;">
+           &copy; 2017 Brand All Rights Reserved
+            </div>
+            <div class="network" style="float: right;">
+              <a href="#" id="facebook" class="network-button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#" id="twitter" class="network-button"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#" id="linkedin" class="network-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              <a href="#" id="pinterest" class="network-button"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+              <a href="#" id="google-plus" class="network-button"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </div>
+          </div>
+       </div>
+        </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(".drop-down-btn").click(function(){
+          $(".drop-down-menu").toggleClass('show');                     
+      });
+      
+      $('#myAccount-btn').on('click', function(){
+        $('.myAccount-menu').toggleClass('show-myAccount-menu');
+      });
+
+      $('#login-btn').submit(function() {
+          alert("click")
+          return false;
+      })
+    </script>
+
+</body>
+</html>

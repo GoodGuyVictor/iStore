@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <!--Bootstrap 3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../public/styles/checkout/css/styles.css">
+    <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
+</head>
+<body>
+   <header>
+      <div class="desktop-header">
+       <div class="wrapper">
+           <div class="row">
+               <div class="col-md-3">
+                    <div class="logo">
+                       <a href=".." style="color: black; text-decoration: none;">
+                            <div class="banner fLeft">
+                                <img src="../../../public/pics/checkout/pics/Group%202.png" alt="...">
+                            </div>
+                            <div class="logo-text fLeft">
+                                BRAN<span style="font-weight: bold; color: #F38191;">D</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search-box">
+                        <div class="row">    
+                            <div class="col-md-2" style="padding: 0;">                    
+                                <div class="drop-down">
+                                    <button class="drop-down-btn">Browse <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                    <div class="drop-down-menu">
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7" style="padding: 0;">
+                                <div class="search-bar">
+                                    <input id="header-search-bar" type="text" placeholder="Search for item...">
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="padding: 0;">
+                                <div class="search-button">
+                                    <button id="header-search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="col-md-3">
+                    <div class="account">
+                       <div class="row">
+                           <div class="col-sm-3">
+                                <div id="cart">
+                                    <img src="../../../public/pics/checkout/pics/Forma%201.png" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div id="myAccount">
+                                    <button id="myAccount-btn">My Account <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <hr style="margin-bottom: 17px;">
+        <nav id="header-menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">KIDS</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">FUATURE</a></li>
+                <li><a href="#">HOT DEAL</a></li>
+            </ul>
+        </nav>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="responsive-header">
+            <div class="left-container fLeft">
+                <a href="#">
+                    <div class="logo-responsive">
+                        <img src="../../../public/pics/checkout/pics/Group%202.png" alt="...">
+                    </div>
+                </a>
+                <div class="search-button-responsive">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="right-container fRight">
+                <button class="burger-menu fLeft">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                    <div class="account-responsive fLeft">
+                        <img src="../../../public/pics/checkout/pics/account-responsive.png" alt="...">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="cart-responsive fLeft">
+                        <img src="../../../public/pics/checkout/pics/cart-resp.png" alt="...">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div style="clear: both;"></div>
+    <main>
+      <section id="checkout">
+        <div class="wrapper">
+          <div class="checkout-content">
+            <h2>Enter a new shipping adress</h2>
+            <p>When finished, click the "Countinue" button.</p>
+            <form method="post">
+              <label for="full-name">Full name:</label>
+              <input name="full-name" type="text" class="form-control" id="full-name">
+              <br>
+              <label for="adress-1">Adress line 1:</label>
+              <input name="adress-1" type="text" class="form-control" id="adress-1" placeholder="Street adress, P.O box, company name, c/o">
+              <br>
+              <label for="adress-2">Adress line 2:</label>
+              <input name="adress-2" type="text" class="form-control" id="adress-2" placeholder="Apartment, suite, unit, building, floor, etc.">
+              <br>
+              <label for="city">City:</label>
+              <input name="city" type="text" class="form-control" id="city">
+              <br>
+              <label for="state">State/Province/Region:</label>
+              <input name="state" type="text" class="form-control" id="state">
+              <br>
+              <label for="zip">ZIP:</label>
+              <input name="zip" type="text" class="form-control" id="zip">
+              <br>
+              <label for="country">Country:</label>
+              <select name="country" id="country" class="form-control">
+                <option value="1">1</option>
+                <option value="1">1</option>
+                <option value="1">1</option>
+                <option value="1">1</option>
+                <option value="1">1</option>
+              </select>
+              <br>
+              <label for="phone">Phone number:</label>
+              <input name="phone" type="text" class="form-control" id="phone">
+              <hr>
+              <button type="submit" id="continue">Continue</button>
+            </form>
+          </div>
+        </div>
+      </section>
+        <section id="subscribe-responsive">
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-md-6 col-xs-6">
+                <div class="subscribe-log">
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/checkout/pics/f1.png" style="width: 100%;" alt="...">
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/checkout/pics/f2.png" style="width: 100%;" alt="...">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/checkout/pics/f3.png" style="width: 100%;" alt="...">
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                      <img src="../../../public/pics/checkout/pics/f4.png" style="width: 100%;" alt="...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-6" style="text-align: center; padding: 0 50px;">
+                <hgroup>
+                    <h3>SUBSCRIBE</h3>
+                    <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                </hgroup>
+                <br>
+                <div class="email-box" style="width: 100%;">
+                  <div class="row">
+                   <div class="col-md-9 col-xs-9" style="padding: 0;">
+                      <div class="email-bar">
+                          <input type="email" style="width: 100%;" placeholder="Enter Your Email">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3" style="padding: 0;">
+                      <div class="subscribe-btn">
+                          <input type="submit" class="sub-button" value="Subscribe">
+                      </div>    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="subscribe">
+            <div class="wrapper">
+               <div class="row">
+                  <div class="left-section col-lg-7 col-md-12">
+                      <div class="row">
+                          <div class="col-lg-3 col-md-12">
+                              <div class="avatar">
+                                  <img src="../../../public/pics/checkout/pics/Layer%2040.png" alt="...">
+                              </div>
+                          </div>
+                          <div class="col-lg-9 col-md-12">
+                              <div class="text">
+                                  <p><strong><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
+          a pulvinar purus condimentum a. Aliquam condimentum
+                                      mattis neque sed pretium"</i></strong></p>
+                                  <span style="color: #F38191;"><strong>Bin Burhan</strong></span><br>
+                                  <span>Dhaka, Bc</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="right-section col-lg-5">
+                      <hgroup>
+                          <h3>SUBSCRIBE</h3>
+                          <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                      </hgroup>
+                      <br>
+                      <div class="email-box">
+                        <div class="row">
+                         <div class="col-md-9" style="padding: 0;">
+                            <div class="email-bar">
+                                <input type="email" style="width: 100%;" placeholder="Enter Your Email">
+                            </div>
+                          </div>
+                          <div class="col-md-3" style="padding: 0;">
+                            <div class="subscribe-btn">
+                                <input type="submit" class="sub-button" value="Subscribe">
+                            </div>    
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+       <div class="wrapper" style="padding-bottom: 50px;">
+           <div class="row">
+               <div class="col-sm-6">
+                <div class="logo-footer">
+                    <img class="fLeft" src="../../../public/pics/checkout/pics/Group%202.png" alt="logo">
+                    <div class="logo-text fLeft">BRAN<span class="bold" style="color: #F38191;">D</span></div>
+                    <div style="clear: both;"></div>
+                    <br>
+                    <div class="description" style="color: grey;">
+                        <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p> 
+                        <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+    Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div id="company">
+                                    <h5>COMPANY</h5>
+                                    <br>
+                                    <p><a href="#">Home</a></p>
+                                    <p><a href="#">Shop</a></p>
+                                    <p><a href="#">About</a></p>
+                                    <p><a href="#">How it Works</a></p>
+                                    <p><a href="#">Contact</a></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="information">
+                                    <h5>INFORMATION</h5>
+                                    <br>
+                                    <p><a href="#">Terms and Conditions</a></p>
+                                    <p><a href="#">Privacy Policy</a></p>
+                                    <p><a href="#">How to buy</a></p>
+                                    <p><a href="#">How to sell</a></p>
+                                    <p><a href="#">Promotion</a></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="shop-category">
+                                    <h5>SHOP CATEGORY</h5>
+                                    <br>
+                                    <p><a href="#">Men</a></p>
+                                    <p><a href="#">Women</a></p>
+                                    <p><a href="#">Child</a></p>
+                                    <p><a href="#">Apparel</a></p>
+                                    <p><a href="#">Browse all</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <div id="copyright">
+               <div class="wrapper">
+                   <div class="rights fLeft" style="font-size: 110%;">
+                   &copy; 2017 Brand All Rights Reserved
+                    </div>
+                    <div class="network" style="float: right;">
+                        <a href="#" id="facebook" class="network-button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" id="twitter" class="network-button"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" id="linkedin" class="network-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" id="pinterest" class="network-button"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                        <a href="#" id="google-plus" class="network-button"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+           </div>
+        </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(".drop-down-btn").click(function(){
+            $(".drop-down-menu").toggleClass('show');                     
+        });
+        
+        $(".shipping-adress-opener").click(function(){
+           $(".shipping-adress-content").toggleClass("show");
+           $(".shipping-adress-content").toggleClass("expand-height");
+        });
+    </script>
+
+</body>
+</html>
