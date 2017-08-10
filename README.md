@@ -1,2 +1,1 @@
-#iStore
 The internet store
