@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alex
- * Date: 03.07.2017
- * Time: 19:48
- */
+
 
 namespace simpleengine\models;
 
@@ -18,9 +13,9 @@ class User implements DbModelInterface
     private $middlename;
     private $email;
 
-    public function __construct($email){
-        if(!empty($email)){
-            $this->find($email);
+    public function __construct($id = null){
+        if((int)$id > 0){
+            $this->find($id);
         }
     }
 
@@ -28,10 +23,10 @@ class User implements DbModelInterface
 
     }
 
-    public function find($email)
+    public function find($id)
     {
         $app = Application::instance();
-        $sql = "SELECT * FROM users WHERE email = '".$email."'";
+        $sql = "SELECT * FROM users WHERE id = ".(int)$id;
         $result = $app->db()->getArrayBySqlQuery($sql);
 
         if(isset($result[0])){
@@ -39,9 +34,7 @@ class User implements DbModelInterface
             $this->firstname = $result[0]["firstname"];
             $this->lastname = $result[0]["lastname"];
             $this->email = $result[0]["email"];
-            return true;
-        } else
-            return false;
+        }
     }
 
     public function getUsersBasket(){
