@@ -38,6 +38,11 @@ class DefaultController extends AbstractController
     }
 
     public function actionLogin(){
+        $error = $_SESSION['error'];
+        unset($_SESSION['error']);
+        $this->render('index_login', [
+            "error" => $error
+        ]);
         echo "actionLogin";
     }
 
