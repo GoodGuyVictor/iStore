@@ -10,7 +10,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
     <script>
+        $(document).ready(function() {
+           $('#login').on('click', function () {
+               var email = $('#email').val();
+               var password = $('#password').val();
 
+               $.ajax({
+                   url: '/user/login/',
+                   type: 'POST',
+                   data: {"email": email, "password": password},
+                   success: function() {
+                       location.href = '/'
+                   }
+               })
+           })
+        });
     </script>
     <style type="text/css">
         .wrapper {
@@ -39,7 +53,7 @@
             margin-left: 10px;
         }
 
-        #signup {
+        #login {
             width: 100%;
             background: #f38191;
             border-radius: 3px;
@@ -49,7 +63,7 @@
             cursor: pointer;
         }
 
-        #signup:hover {
+        #login:hover {
             background: #f45a6f;
         }
 
@@ -100,7 +114,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" class="form-control" />
         <br />
-        <input type="submit" id="signup" value="Log in" />
+        <input type="submit" id="login" value="Log in" />
         <br />
         <br />
     </form>
