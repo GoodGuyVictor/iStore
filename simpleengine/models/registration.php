@@ -42,20 +42,20 @@ class Registration implements DbModelInterface
         if(!$this->emailExists()) {
             if($this->passwordsMatch()) {
                 $this->save();
+                return '';
             } else
                 return "Passwords don't match";
         }else {
             return "User with such email already exists";
         }
-
     }
 
     private function emailExists() {
         $app = Application::instance();
-        $sql = "SELECT email FROM users email LIKE '".$this->email."'";
+        $sql = "SELECT email FROM users WHERE email LIKE '".$this->email."'";
         $result = $app->db()->getArrayBySqlQuery($sql);
 
-        if(!empty($result)) {
+        if(empty($result)) {
             return false;
         } else
             return true;

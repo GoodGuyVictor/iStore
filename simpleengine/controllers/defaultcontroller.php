@@ -40,7 +40,7 @@ class DefaultController extends AbstractController
     public function actionLogin(){
         if($_SESSION['error']) {
             $error = $_SESSION['error'];
-            echo $this->render('index_login', [
+            echo $this->render('index_login_error', [
                 "error" => $error
             ]);
         } else {
