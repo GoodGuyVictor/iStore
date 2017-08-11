@@ -6,7 +6,10 @@
  * Date: 8/11/2017
  * Time: 12:45 PM
  */
-class RegistrationException
+
+namespace simpleengine\models\exceptions;
+
+class RegistrationException extends \Exception
 {
 
 }

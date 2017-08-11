@@ -9,6 +9,9 @@
 namespace simpleengine\models;
 
 
+use simpleengine\core\Application;
+use simpleengine\models\exceptions\RegistrationException;
+
 class Registration implements DbModelInterface
 {
 
@@ -30,7 +33,40 @@ class Registration implements DbModelInterface
         $this->pass2 = $pass2;
     }
 
-    public function register
+
+    /**
+     * @return string
+     * returns error message in case if everything is fine empty string is returned
+     */
+    public function makeRegistration() {
+        if(!$this->emailExists()) {
+            if($this->passwordsMatch()) {
+                $this->save();
+            } else
+                return "Passwords don't match";
+        }else {
+            return "User with such email already exists";
+        }
+
+    }
+
+    private function emailExists() {
+        $app = Application::instance();
+        $sql = "SELECT email FROM users email LIKE '".$this->email."'";
+        $result = $app->db()->getArrayBySqlQuery($sql);
+
+        if(!empty($result)) {
+            return false;
+        } else
+            return true;
+    }
+
+    private function passwordsMatch() {
+        if($this->pass1 == $this->pass2)
+            return true;
+        else
+            return false;
+    }
 
     public function find($id)
     {
@@ -39,6 +75,32 @@ class Registration implements DbModelInterface
 
     public function save()
     {
-        // TODO: Implement save() method.
+        $app = Application::instance();
+        $id = $this->generateNewId();
+        $sql = "INSERT INTO users VALUES('".$id."', '".$this->firstname."', '".$this->lastname."', '".$this->email."', '".$this->pass1."')";
+
+        if(!$app->db()->insertDataToDb($sql))
+            throw new RegistrationException("We experience technical problems. Please try again later.");
+    }
+
+    /**
+     * @return int
+     */
+    private function generateNewId() {
+        $id = $this->getLastId();
+        $id++;
+
+        return $id;
+    }
+
+    /**
+     * @return int
+     */
+    private function getLastId() {
+        $app = Application::instance();
+        $sql = "SELECT id FROM users ORDER BY id DESC LIMIT 1";
+        $result = $app->db()->getArrayBySqlQuery($sql);
+
+        return $result[0]['id'];
     }
 }
