@@ -11,7 +11,7 @@ namespace simpleengine\models;
 
 use simpleengine\core\Application;
 
-class Login implements DbModelInterface {
+class Authentication implements DbModelInterface {
 
     private $email;
     private $password;

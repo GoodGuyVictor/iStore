@@ -12,7 +12,7 @@ namespace simpleengine\controllers;
 use Prophecy\Doubler\LazyDouble;
 use simpleengine\core\Application;
 use simpleengine\core\Db;
-use simpleengine\models\Login;
+use simpleengine\models\Authentication;
 
 class UserController extends AbstractController
 {
@@ -26,9 +26,9 @@ class UserController extends AbstractController
         session_start();
         if(key_exists('email', $_POST) && $_POST['email'] != "") {
             if(key_exists('password', $_POST) && $_POST['password'] != "") {
-                $loginingUser = new Login($_POST['email'], $_POST['password']);
+                $loginingUser = new Authentication($_POST['email'], $_POST['password']);
                 $error = $loginingUser->auth();
-                echo $error;
+
                 if($error) {
                     $_SESSION['error'] = $error;
                 }else {
