@@ -38,4 +38,9 @@ class Db
 
         return $result;
     }
+
+    public function insertDataToDb(string $sql) {
+        $statement = $this->pdo->query($sql);
+        return $statement;
+    }
 }
