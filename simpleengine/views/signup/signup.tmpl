@@ -54,7 +54,7 @@
                     error += '</ul>';
                     $('.error-message-field').html(error);
                 }else {
-                    $('form').unbind('submit').submit()
+                    $('form').unbind('submit').submit();
                     $.ajax({
                         url: '/signup/create/',
                         type: 'POST',
