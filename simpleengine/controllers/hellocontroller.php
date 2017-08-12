@@ -19,7 +19,7 @@ class HelloController extends AbstractController
         $user = new User(1);
         echo "Your email is ".$user->getEmail();
         $usersItems = $user->getUsersBasket();
-        echo "<p>Your basket</p>";
+        echo "<p>Your cart</p>";
         echo "<ul>";
         foreach($usersItems as $item){
             echo "<li>".$item["product_name"].": ".$item["product_price"]." руб.</li>";

@@ -37,9 +37,9 @@ class User implements DbModelInterface
         }
     }
 
-    public function getUsersBasket(){
-        $basket = new Basket($this->id);
-        return $basket->getProductsArray();
+    public function getUsersCart(){
+        $cart = new Cart($this->id);
+        return $cart->getProductsArray();
     }
 
     public function save()

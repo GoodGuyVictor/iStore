@@ -25,8 +25,8 @@ class DefaultController extends AbstractController
         }
 
         if(key_exists('email', $_SESSION) && $_SESSION['email'] != "") {
-            $loggedInUser = new Authentication($_SESSION['email'], '');
-            $userId = $loggedInUser->getIdByEmail();
+            $auth = new Authentication($_SESSION['email']);
+            $userId = $auth->getIdByEmail();
             $user = new User($userId);
             echo $this->render('index_loggedin', [
                 "firstname" => $user->getFirstname()
