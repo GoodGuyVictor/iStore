@@ -9,7 +9,7 @@
 namespace simpleengine\models;
 
 
-class CartProductList
+class UsersCart
 {
     private $goodsCount;
     private $amount;
@@ -17,13 +17,11 @@ class CartProductList
 
     /**
      * Product constructor.
-     * @param $goodsCount
-     * @param $amount
-     * @param $cartItems
+     * @param $userId
      */
-    public function __construct($cartItems)
-    {
-        $this->cartItems = $cartItems;
+    public function __construct($userId){
+        $user = new User($userId);
+        $this->cartItems = $user->getUsersCart();
         $this->setAmount();
         $this->setGoodsCount();
     }
