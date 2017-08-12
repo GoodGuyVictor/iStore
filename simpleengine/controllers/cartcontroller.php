@@ -14,6 +14,7 @@ class BasketController extends AbstractController
 
     public function actionIndex()
     {
+        echo "this is your cart. welcome";
         echo $this->render('basket');
     }
 }
