@@ -25,6 +25,7 @@ class SignupController extends AbstractController
         } else {
             if(key_exists('email', $_SESSION) && $_SESSION['email']) {
                 header('Location: /');
+                exit;
             }else {
                 echo $this->render("signup");
             }
