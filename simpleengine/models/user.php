@@ -42,6 +42,14 @@ class User implements DbModelInterface
         return $cart->getProductsArray();
     }
 
+    public function deleteItemFromCart($id_product) {
+        $app = Application::instance();
+        $sql = "DELETE FROM cart
+                WHERE id_user = ".$this->id." AND id_product =".$id_product;
+        if(!$app->db()->deleteDataFromDb($sql))
+            throw new \Exception("We experience technical problems. Please try again later.");
+    }
+
     public function save()
     {
         // TODO: Implement save() method.
