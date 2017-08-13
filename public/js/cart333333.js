@@ -14,16 +14,6 @@ Cart.prototype = Object.create(Container.prototype);
 Cart.prototype.constructor = Cart;
 
 Cart.prototype.delete = function(product) {
-    // if(this.goodsCount == 0) {
-    //     var errorSmall = $('<small />', {
-    //         style: 'color: red;',
-    //         text: 'Корзина пуста.'
-    //     });
-    //     var error_message = $('.error_message');
-    //     errorSmall.appendTo(error_message);
-    //     return 0;
-    // }
-
     var deleted_elements = [];
     for(var i = 0; i < this.goodsCount; i++){
         if(this.cartItems[i]['id_product'] === product){
@@ -45,36 +35,18 @@ Cart.prototype.delete = function(product) {
 
         return 1;
     }
-
-    // if(deleted_elements.length === 0) {
-    //     var errorSmall = $('<small />', {
-    //         style: 'color: red;',
-    //         text: 'Продукта с таким id в корзине нет.'
-    //     });
-    //     var error_message = $('.error_message');
-    //     errorSmall.appendTo(error_message);
-    //     return 0;
-    // }else{
-    //     this.goodsCount--;
-    //     this.amount -= deleted_elements[0].price;
-    //     this.refresh();
-    //     return 1;
-    // }
 };
 
-// Cart.prototype.render = function(root) {
-//     var cartDiv = $('<div />', {
-//         id: this.id,
-//         text: 'Корзина:'
-//     });
-//
-//     var cartItemsDiv = $('<div />', {
-//         id: this.id + '_items'
-//     });
-//
-//     cartItemsDiv.appendTo(cartDiv);
-//     cartDiv.appendTo(root);
-// }
+Cart.prototype.deleteAll = function() {
+    this.cartItems = [];
+    this.goodsCount = 0;
+    this.amount = 0;
+
+    $.ajax ({
+        type: 'POST',
+        url: '/cart/deleteall/'
+    })
+};
 
 Cart.prototype.render = function() {
 
@@ -184,7 +156,6 @@ Cart.prototype.render = function() {
 
     if(i === 0) {
         var empty = '<h3>Your cart is empty</h3><br><br>';
-        // empty.appendTo('');
         $('.product-list-body').html(empty);
     }
 };
@@ -210,8 +181,6 @@ Cart.prototype.refresh = function() {
 };
 
 Cart.prototype.collectCartItems = function () {
-    // var appendId = '#' + this.id + '_items';
-    //var self = this;
     $.get({
         url: '/cart/getitems/',
         dataType: 'json',
@@ -226,27 +195,4 @@ Cart.prototype.collectCartItems = function () {
         },
         context: this
     });
-    // $.get({
-    //     url: './data.json',
-    //     dataType: 'json',
-    //     success: function (data) {
-    //         var cartData = $('<div />', {
-    //             id: 'cart_data'
-    //             //text: 'Текст'
-    //         });
-    //
-    //         this.goodsCount = data.cart.length;
-    //         this.amount = data.amount;
-    //
-    //         cartData.append('<p>Всего товаров: '+this.goodsCount+'</p>');
-    //         cartData.append('<p>Сумма: '+this.amount+'</p>');
-    //
-    //         cartData.appendTo(appendId);
-    //
-    //         for (var index in data.cart){
-    //             this.cartItems.push(data.cart[index]);
-    //         }
-    //     },
-    //     context: this
-    // });
 };

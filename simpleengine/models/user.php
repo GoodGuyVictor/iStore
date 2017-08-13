@@ -50,6 +50,14 @@ class User implements DbModelInterface
             throw new \Exception("We experience technical problems. Please try again later.");
     }
 
+    public function deleteAllItemsFromCart() {
+        $app = Application::instance();
+        $sql = "DELETE FROM cart
+                WHERE id_user = ".$this->id;
+        if(!$app->db()->deleteDataFromDb($sql))
+            throw new \Exception("We experience technical problems. Please try again later.");
+    }
+
     public function save()
     {
         // TODO: Implement save() method.

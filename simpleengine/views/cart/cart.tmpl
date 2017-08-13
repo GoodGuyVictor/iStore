@@ -16,7 +16,7 @@
 
         $(document).ready(function () {
             var cart = new Cart();
-            console.log(cart.cartItems);
+
             $(document).on('click', '.delete', function () {
                 var product = $(this).parent().attr('id').split('-')[1];
                 cart.delete(product);
@@ -24,7 +24,7 @@
             });
 
             $('#clear-btn').on('click', function () {
-
+                cart.deleteAll();
             })
         })
     </script>
