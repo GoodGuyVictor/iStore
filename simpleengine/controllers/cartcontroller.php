@@ -52,4 +52,15 @@ class CartController extends AbstractController
         }
     }
 
+    public function actionAdd() {
+        $auth = new Authentication($_SESSION['email']);
+        $userId = $auth->getIdByEmail();
+        $user = new User($userId);
+        try {
+            $user->addItemToCart($_POST['id_product'], $_POST['product_price']);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
 }
