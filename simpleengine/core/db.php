@@ -43,4 +43,9 @@ class Db
         $statement = $this->pdo->query($sql);
         return $statement;
     }
+
+    public function deleteDataFromDb(string $sql) {
+        $statement = $this->pdo->query($sql);
+        return $statement;
+    }
 }
