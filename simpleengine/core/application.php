@@ -17,8 +17,6 @@ class Application {
         $class = "\\simpleengine\\" . $this->router->getPackage() . "\\" . $this->router->getController();
         $method = $this->router->getAction();
 
-//        echo $class.'<br>';
-
         if(class_exists($class)){
             $controller = new $class;
             $controller->setRequestedAction($this->router->getAction());

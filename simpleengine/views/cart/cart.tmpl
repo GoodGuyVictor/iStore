@@ -5,8 +5,174 @@
     <title>Shopping cart</title>
     <!--Bootstrap 3-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/css/basket/styles.css">
     <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../../public/js/container.js"></script>
+    <script src="../../../public/js/cart333333.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            var cart = new Cart();
+            console.log(cart.cartItems);
+            $(document).on('click', '.delete', function () {
+                var product = $(this).parent().attr('id').split('-')[1];
+                cart.delete(product);
+
+            });
+
+            $('#clear-btn').on('click', function () {
+
+            })
+        })
+    </script>
+    <style>
+        *{margin:0;padding:0}body,html{width:100%}.bold{font-weight:700}.wrapper{padding:0 216px}.fLeft{float:left}.logo{width:200px}.logo-text{font-size:130%;padding-top:15px;margin-left:10px}header{padding-top:30px}.drop-down-menu{display:none;position:absolute;background-color:#f9f9f9;min-width:160px;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1}.drop-down-menu a{display:block;color:#000;padding:8px 12px;text-decoration:none}.drop-down-menu a:hover{background-color:#E8E8E8}#header-search-bar{padding:6px 0 6px 10px;width:100%;border:1px solid #e6e6e6;border-right:none;border-left:none}.drop-down-btn{border:1px solid #e6e6e6;background:#f5f5f5;border-top-left-radius:3px;border-bottom-left-radius:3px;cursor:pointer;width:100%;height:100%;padding:0 4px}.drop-down-btn:hover{background:#e6e6e6}#header-search-btn{padding:6px 10px;border:1px solid #e6e6e6;background:#f5f5f5;border-top-right-radius:3px;border-bottom-right-radius:3px;cursor:pointer}#header-search-btn:hover{background:#e6e6e6}#cart{margin-right:20px;cursor:pointer}.account,.search-box{padding-top:7px}ul{list-style-type:none;margin-top:-17px}li a{float:left;padding:10px 15px;color:#000;text-decoration:none;font-weight:700}li a:hover{background:#E8E8E8;text-decoration:none;color:#000}#header-menu{width:690px;margin:0 auto}#subscribe{position:relative;padding-top:100px;margin-top:80px;display:block;height:438px}#subscribe:after{content:"";background-image:url(../pics/Rectangle%209.png);opacity:.5;top:0;left:0;bottom:0;right:0;position:absolute;z-index:-1}.right-section{text-align:center}.email-bar input{width:250px;background:#eaeaea;border:none;padding:10px 0 10px 20px;border-top-left-radius:20px;border-bottom-left-radius:20px;outline:0}.subscribe-btn input{border:none;padding:10px 20px;border-top-right-radius:20px;border-bottom-right-radius:20px;background:#f38191;color:#fff;cursor:pointer}.subscribe-btn input:hover{background:#f45a6f}footer{padding-top:100px}footer h5{color:#f38191}footer a{color:grey;text-decoration:none}footer a:hover{text-decoration:none;color:grey}#copyright{background:#e6e6e6;height:50px;padding-top:14px}.network-button{padding-top:3px;text-align:center;background:#fff;margin-right:7px;height:30px;width:30px;float:left}.network-button:hover{color:#fff;background:#f45a6f}.drop-down{position:relative;width:100%;height:34px}.show{display:block}.new-arrivals{background:#f8f3f4;height:150px}#new-arrivals{position:relative;top:60px;font-size:120%;font-weight:700;color:#f16d7f;float:left}.quantity{text-align:center;padding-right:10px}.quantity input{width:50px;padding-left:18px}.action{text-align:center;cursor:pointer;color:grey;padding-right:5px}.action:hover{color:#000}.column{padding-top:45px}.unit-price{padding-left:25px}.shipping{padding-left:15px}.subtotal{padding-left:20px}#clear-btn{border:1px solid #e6e6e6;background:#fff;float:left;padding:10px 25px}#clear-btn:hover{background:#e6e6e6}#continue-btn{border:1px solid #e6e6e6;background:#fff;float:right;padding:10px 25px}#continue-btn:hover{background:#e6e6e6}.form{width:100%;padding:13px;border:1px solid #e6e6e6}#apply-coupon{border:1px solid #e6e6e6;background:#fff;padding:10px 20px}#apply-coupon:hover{background:#e6e6e6}#get-quote-btn{border:1px solid #e6e6e6;background:#fff;padding:10px 20px}#get-quote-btn:hover{background:#e6e6e6}.proceed-to-checkout{background:#f5f3f3;height:100%;padding:20px;text-align:right}#proceed-to-checkout{background:#f38191;color:#fff;border:none;padding:10px 30px}#proceed-to-checkout:hover{background:#f45a6f}.checkout{padding-top:70px}#shopping-cart{padding: 100px 0}
+
+        #header-search-bar:focus {
+            border-color: #F38191;
+            box-shadow: 0 1px 1px #F38191 inset, 0 0 8px #F38191;
+            outline: 0 none;
+        }
+
+        .fRight {
+            float: right;
+        }
+
+        .pink {
+            color: #f16d7f;
+        }
+
+        .pink-button {
+            border:none;
+            background:#f38191;
+            padding:6px 15px;
+            color:#fff;
+            border-radius:3px;
+            cursor:pointer;
+        }
+
+        .pink-button:hover {
+            background:#f45a6f;
+        }
+
+        .big-font {
+            font-size: 150%;
+        }
+
+        .cart-item {
+            padding-top: 5px;
+        }
+
+        .responsive-header {
+            position: absolute;
+            display: none;
+            width: 100%; }
+
+        .logo-responsive {
+            float: left;
+            background: #222222;
+            padding: 15px 17px 15px 10px; }
+        .logo-responsive img {
+            width: 40px; }
+
+        .search-button-responsive {
+            cursor: pointer;
+            float: left;
+            padding: 20px;
+            font-size: 180%; }
+
+        .burger-menu {
+            cursor: pointer;
+            border: none;
+            font-size: 280%;
+            padding: 3px 12px;
+            background: transparent; }
+
+        .account-responsive {
+            padding: 14px; }
+        .account-responsive img {
+            width: 35px; }
+
+        .cart-responsive {
+            background: #222222;
+            padding: 15px; }
+        .cart-responsive img {
+            width: 35px; }
+
+        #subscribe-responsive {
+            display: none;
+            padding: 50px 0; }
+
+
+
+        @media screen and (max-width: 1295px) {
+            .wrapper {
+                padding: 0 150px;
+            }
+        }
+
+        @media screen and (max-width: 1165px) {
+            .wrapper {
+                padding: 0 80px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            header {
+                padding: 0;
+            }
+
+            .desktop-header {
+                display: none;
+            }
+
+            .responsive-header {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #subscribe-responsive {
+                display: block; }
+
+            .right-section {
+                display: none; }
+
+            .left-section {
+                text-align: center; }
+
+            footer .wrapper {
+                padding: 0 100px;
+            }
+        }
+
+        #sub-button {
+            outline: none;
+        }
+
+        .form:focus {
+            border-color: #F38191;
+            box-shadow: 0 1px 1px #F38191 inset, 0 0 8px #F38191;
+            outline: 0 none;
+        }
+
+        .checkout {
+            display: none;
+        }
+
+        .product-list-body img {
+            width: 100%;
+        }
+
+        .delete {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
    <header>
@@ -27,8 +193,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="search-box">
-                        <div class="row">    
-                            <div class="col-md-2" style="padding: 0;">                    
+                        <div class="row">
+                            <div class="col-md-2" style="padding: 0;">
                                 <div class="drop-down">
                                     <button class="drop-down-btn">Browse <i class="fa fa-caret-down" aria-hidden="true"></i></button>
                                     <div class="drop-down-menu">
@@ -104,7 +270,6 @@
          <div class="wrapper">
            <h2>Shopping cart</h2>
            <div class="product-list">
-<!--                 All the content here will be generated by javascript-->
              <div class="product-list-header">
                <div class="row">
                  <div class="col-sm-7"></div>
@@ -114,144 +279,7 @@
                <hr style="height:1px;border:none;color:#333;background-color:#c9c9c9;margin:5px;" />
              </div>
              <div class="product-list-body">
-               <div class="cart-item">
-                 <div class="row">
-                   <div class="col-sm-7">
-                     <div class="item-details">
-                       <div class="row">
-                         <div class="col-sm-3">
-                           <div class="product-picture">
-                             <img src="../../../public/pics/cart/pics/Product%20Image.png" alt="...">
-                           </div>
-                         </div>
-                         <div class="col-sm-9">
-                           <div class="product-description">
-                             <h4>MANGO PEOPLE T-SHIRT</h4>
-                             <br>
-                             <div class="color"><b>Color: </b>Red</div>
-                             <div class="size"><b>Size: </b>XL</div>
-                             <a href="#">Delete</a>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                     <div class="item-price pink bold big-font">$50.00</div>
-                   </div>
-                   <div class="col-sm-2">
-                     <div class="item-quantity">
-                       <form method="post">
-                         <select name="quantity">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10+">10+</option>
-                         </select>
-                       </form>
-                     </div>
-                   </div>
-                 </div>
-                 <hr style="height:1px;border:none;color:#333;background-color:#c9c9c9;margin:5px;" />
-               </div>
-               <div class="cart-item">
-                 <div class="row">
-                   <div class="col-sm-7">
-                     <div class="item-details">
-                       <div class="row">
-                         <div class="col-sm-3">
-                           <div class="product-picture">
-                             <img src="../../../public/pics/cart/pics/Product%20Image.png" alt="...">
-                           </div>
-                         </div>
-                         <div class="col-sm-9">
-                           <div class="product-description">
-                             <h4>MANGO PEOPLE T-SHIRT</h4>
-                             <br>
-                             <div class="color"><b>Color: </b>Red</div>
-                             <div class="size"><b>Size: </b>XL</div>
-                             <a href="#">Delete</a>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                     <div class="item-price pink bold big-font">$50.00</div>
-                   </div>
-                   <div class="col-sm-2">
-                     <div class="item-quantity">
-                       <form method="post">
-                         <select name="quantity">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10+">10+</option>
-                         </select>
-                       </form>
-                     </div>
-                   </div>
-                 </div>
-                 <hr style="height:1px;border:none;color:#333;background-color:#c9c9c9;margin:5px;" />
-               </div>
-               <div class="cart-item">
-                 <div class="row">
-                   <div class="col-sm-7">
-                     <div class="item-details">
-                       <div class="row">
-                         <div class="col-sm-3">
-                           <div class="product-picture">
-                             <img src="../../../public/pics/cart/pics/Product%20Image.png" alt="...">
-                           </div>
-                         </div>
-                         <div class="col-sm-9">
-                           <div class="product-description">
-                             <h4>MANGO PEOPLE T-SHIRT</h4>
-                             <br>
-                             <div class="color"><b>Color: </b>Red</div>
-                             <div class="size"><b>Size: </b>XL</div>
-                             <a href="#">Delete</a>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="col-sm-3">
-                     <div class="item-price pink bold big-font">$50.00</div>
-                   </div>
-                   <div class="col-sm-2">
-                     <div class="item-quantity">
-                       <form method="post">
-                         <select name="quantity">
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10+">10+</option>
-                         </select>
-                       </form>
-                     </div>
-                   </div>
-                 </div>
-                 <hr style="height:1px;border:none;color:#333;background-color:#c9c9c9;margin:5px;" />
-               </div>
+                 <!--                 All the content here will be generated by javascript-->
              </div>
            </div>
            <br>
@@ -260,7 +288,7 @@
               <button id="clear-btn"><b>CLEAR SHOPPING CART</b></button>
             </div>
             <div class="continue">
-              <a href="../index.tmpl" style="color: black;"><button id="continue-btn"><b>CONTINUE SHOPPING</b></button></a>
+              <a href="/" style="color: black;"><button id="continue-btn"><b>CONTINUE SHOPPING</b></button></a>
             </div>
           </div>
           <div style="clear: both;"></div>
@@ -287,7 +315,7 @@
                       <p style="font-size: 110%;"><b>SUBTOTAL:</b><span class="subtotal-price" style="padding-left: 10px; font-weight: bold; color: #f16d7f;">$150</span></p>
                       <hr>
                       <div class="proceed-to-checkout-btn">
-                        <a href="/../checkout/"><button id="proceed-to-checkout"><b>PROCEED TO CHECKOUT</b></button></a>
+                        <a href="/checkout/"><button id="proceed-to-checkout"><b>PROCEED TO CHECKOUT</b></button></a>
                       </div>
                     </div>
                   </div>
@@ -335,7 +363,7 @@
                     <div class="col-md-3 col-xs-3" style="padding: 0;">
                       <div class="subscribe-btn">
                           <input type="submit" class="sub-button" value="Subscribe">
-                      </div>    
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -355,7 +383,7 @@
                           </div>
                           <div class="col-lg-9 col-md-12">
                               <div class="text">
-                                  <p><b><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
+                                  <p><b><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi,
           a pulvinar purus condimentum a. Aliquam condimentum
                                       mattis neque sed pretium"</i></b></p>
                                   <span style="color: #F38191;"><b>Bin Burhan</b></span><br>
@@ -380,7 +408,7 @@
                           <div class="col-md-3" style="padding: 0;">
                             <div class="subscribe-btn">
                                 <input type="submit" class="sub-button" value="Subscribe">
-                            </div>    
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -399,7 +427,7 @@
                     <div style="clear: both;"></div>
                     <br>
                     <div class="description" style="color: grey;">
-                        <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p> 
+                        <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p>
                         <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
     Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
                     </div>
@@ -461,14 +489,14 @@
                 </div>
            </div>
         </footer>
-        
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(".drop-down-btn").click(function(){
-            $(".drop-down-menu").toggleClass('show');                     
+            $(".drop-down-menu").toggleClass('show');
         });
     </script>
 

@@ -21,7 +21,7 @@ class Authentication implements DbModelInterface {
      * @param $email string
      * @param $password string
      */
-    public function __construct($email, $password)
+    public function __construct($email, $password = '')
     {
         $this->email = $email;
         $this->password = $password;
