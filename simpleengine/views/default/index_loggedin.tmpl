@@ -12,11 +12,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
     <script src="../../../public/js/cart4.3.js"></script>
+    <style type="text/css">
+        .fa-check {
+            display: none;
+            font-size: 400%;
+            position: absolute;
+            top: 130px;
+            left: 150px;
+            color: white;
+        }
+    </style>
     <script>
+        function checkGoodsThatAreAlreadyInCart() {
+            for(var i = 0; i < cart.goodsCount; i++){
+                var id = cart.cartItems[i]['id_product'];
+                var addToCartBtn = $('#goods').find('#'+id);
+                addToCartBtn.parent().find('img').css('filter', 'brightness(50%)');
+                addToCartBtn.parent().find('.fa-check').show();
+                addToCartBtn.hide();
+            }
+        }
+
         var cart = new Cart();
         $(document).ready(function () {
 
-            $('.number-of-items-within-the-cart').text(cart.getGoodsCount());
+            checkGoodsThatAreAlreadyInCart();
+
+            $('.number-of-items-within-the-cart').text(cart.goodsCount);
 
             $('#logout').on('click', function () {
                 $.ajax({
@@ -29,7 +51,19 @@
 
             /*cart logic*/
             $('.add-to-cart-btn').on('click', function () {
-                alert('click')
+                var id = $(this).attr('id');
+                var parent = $(this).parent();
+                var price = parent.find('.product-price').text().split('$')[1];
+
+                $.ajax({
+                    url: '/cart/add/',
+                    type: 'POST',
+                    data: {"id_product": id, "product_price": price}
+                });
+                $(this).hide();
+                parent.find('.fa-check').show();
+                parent.find('img').css('filter', 'brightness(50%)');
+                $('.number-of-items-within-the-cart').text(++cart.goodsCount);
 
             })
         })
@@ -88,7 +122,7 @@
                                     <div class="well">
                                       <p>Hello, {{firstname}}</p>
                                         <div class="row">
-                                            <div class="col-sm-5">
+                                            <div class="col-sm-6">
                                                 <a href="cart/"><button id="cart-btn" class="btn pink-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart(<span class="number-of-items-within-the-cart"></span>)</button></a>
                                             </div>
                                             <div class="col-sm-5">
@@ -230,6 +264,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/1.png" alt="..." style="width: 100%;">
                                 <div id="1" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>WHITE T-SHIRT</strong></span></p>
                                     <p><span class="bold pink product-price">$30.00</span></p>
@@ -240,6 +275,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/2.png" alt="..." style="width: 100%;">
                                 <div id="2" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>RED T-SHIRT</strong></span></p>
                                     <p><span class="bold pink product-price">$35.00</span></p>
@@ -250,6 +286,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/3.png" alt="..." style="width: 100%;">
                                 <div id="3" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>BLUE JACKET</strong></span></p>
                                     <p><span class="bold pink product-price">$52.00</span></p>
@@ -260,6 +297,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/4.png" alt="..." style="width: 100%;">
                                 <div id="4" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>FLOWERED DRESS</strong></span></p>
                                     <p><span class="bold pink product-price">$38.00</span></p>
@@ -274,6 +312,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/5.png" alt="..." style="width: 100%;">
                                 <div id="5" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>BLACK AND WHITE DRESS</strong></span></p>
                                     <p><span class="bold pink product-price">$39.00</span></p>
@@ -284,6 +323,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/6.png" alt="..." style="width: 100%;">
                                 <div id="6" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>GREY JACKET</strong></span></p>
                                     <p><span class="bold pink product-price">$49.00</span></p>
@@ -294,6 +334,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/7.png" alt="..." style="width: 100%;">
                                 <div id="7" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                     <p><span class="product-name"><strong>BIEGE PANTS</strong></span></p>
                                     <p><span class="bold pink product-price">$40.00</span></p>
@@ -304,6 +345,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/8.png" alt="..." style="width: 100%;">
                                 <div id="8" class="add-to-cart-btn"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</div>
+                                <i class="fa fa-check" aria-hidden="true"></i>
                                 <div class="product-text">
                                   <p><span class="product-name"><strong>WHITE SHORTS</strong></span></p>
                                     <p><span class="bold pink product-price">$35.00</span></p>
