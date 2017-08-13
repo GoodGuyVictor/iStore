@@ -11,8 +11,8 @@ namespace simpleengine\models;
 
 class UsersCart
 {
-    private $goodsCount;
-    private $amount;
+    private $goodsCount = 0;
+    private $amount = 0;
     private $cartItems = [];
 
     /**

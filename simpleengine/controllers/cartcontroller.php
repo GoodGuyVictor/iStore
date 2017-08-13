@@ -9,12 +9,24 @@
 namespace simpleengine\controllers;
 
 
-class BasketController extends AbstractController
+use simpleengine\models\Authentication;
+use simpleengine\models\User;
+use simpleengine\models\UsersCart;
+
+class CartController extends AbstractController
 {
 
     public function actionIndex()
     {
-        echo "this is your cart. welcome";
-        echo $this->render('basket');
+        echo $this->render('cart');
     }
+
+    public function actionGetItems() {
+        $auth = new Authentication($_SESSION['email']);
+        $userId = $auth->getIdByEmail();
+        $usersCart = new UsersCart($userId);
+
+        echo json_encode($usersCart->expose());
+    }
+
 }
