@@ -41,6 +41,7 @@ Cart.prototype.deleteAll = function() {
     this.cartItems = [];
     this.goodsCount = 0;
     this.amount = 0;
+    this.refresh();
 
     $.ajax ({
         type: 'POST',
