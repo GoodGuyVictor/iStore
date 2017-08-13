@@ -11,9 +11,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
-    <script src="../../../public/js/cart22222.js"></script>
+    <script src="../../../public/js/cart4.3.js"></script>
     <script>
+        var cart = new Cart();
         $(document).ready(function () {
+
+            $('.number-of-items-within-the-cart').text(cart.getGoodsCount());
+
             $('#logout').on('click', function () {
                 $.ajax({
                     url: '/user/logout/',
@@ -85,7 +89,7 @@
                                       <p>Hello, {{firstname}}</p>
                                         <div class="row">
                                             <div class="col-sm-5">
-                                                <a href="cart/"><button id="cart-btn" class="btn pink-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</button></a>
+                                                <a href="cart/"><button id="cart-btn" class="btn pink-button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart(<span class="number-of-items-within-the-cart"></span>)</button></a>
                                             </div>
                                             <div class="col-sm-5">
                                                 <form method="post">

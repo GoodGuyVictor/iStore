@@ -13,6 +13,10 @@ function Cart() {
 Cart.prototype = Object.create(Container.prototype);
 Cart.prototype.constructor = Cart;
 
+Cart.prototype.getGoodsCount = function () {
+    return this.goodsCount;
+};
+
 Cart.prototype.delete = function(product) {
     var deleted_elements = [];
     for(var i = 0; i < this.goodsCount; i++){
