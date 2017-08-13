@@ -33,8 +33,23 @@ class CartController extends AbstractController
         $auth = new Authentication($_SESSION['email']);
         $userId = $auth->getIdByEmail();
         $user = new User($userId);
-        $user->deleteItemFromCart($_POST['id_product']);
+        try {
+            $user->deleteItemFromCart($_POST['id_product']);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
 
+    }
+
+    public function actionDeleteAll() {
+        $auth = new Authentication($_SESSION['email']);
+        $userId = $auth->getIdByEmail();
+        $user = new User($userId);
+        try {
+            $user->deleteAllItemsFromCart();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
     }
 
 }
