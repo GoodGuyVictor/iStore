@@ -36,6 +36,13 @@ Cart.prototype.delete = function(product) {
         this.goodsCount--;
         this.amount -= deleted_elements[0].price;
         this.refresh();
+
+        $.ajax({
+            url: '/cart/delete/',
+            type: 'POST',
+            data: {"id_product": product}
+        });
+
         return 1;
     }
 
