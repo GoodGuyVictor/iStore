@@ -306,8 +306,6 @@ footer a:hover {
 .product-box:hover {
     box-shadow: 5px 5px 20px grey;
     transform: scale(1.05, 1.05); }
-.product-box:hover img {
-    filter: brightness(50%); }
 .product-box:hover .add-to-cart-btn {
     display: block; }
 

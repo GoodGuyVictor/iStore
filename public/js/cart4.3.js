@@ -13,6 +13,10 @@ function Cart() {
 Cart.prototype = Object.create(Container.prototype);
 Cart.prototype.constructor = Cart;
 
+Cart.prototype.getGoodsCount = function () {
+    return this.goodsCount;
+};
+
 Cart.prototype.delete = function(product) {
     var deleted_elements = [];
     for(var i = 0; i < this.goodsCount; i++){
@@ -75,15 +79,15 @@ Cart.prototype.render = function() {
             class: 'col-sm-3'
         });
 
-        var col5Div = $('<div />', {
-            class: 'col-sm-5'
+        var innerCol3Div = $('<div />', {
+            class: 'col-sm-3'
         });
 
         var outerCol7Div = $('<div />', {
             class: 'col-sm-7'
         });
-        var innerCol7Div = $('<div />', {
-            class: 'col-sm-7'
+        var col9Div = $('<div />', {
+            class: 'col-sm-9'
         });
 
         var itemDetailsDiv = $('<div />', {
@@ -118,7 +122,7 @@ Cart.prototype.render = function() {
 
         var itemPriceDiv = $('<div />', {
            class: 'item-price pink bold big-font',
-            text: this.cartItems[i]['product_price']
+            text: '$'+this.cartItems[i]['product_price']
         });
 
         for(var j = 1; j <= 10; j++) {
@@ -136,12 +140,12 @@ Cart.prototype.render = function() {
         itemPriceDiv.appendTo(outerCol3Div);
 
         img.appendTo(productPictureDiv);
-        productPictureDiv.appendTo(col5Div);
-        col5Div.appendTo(innerRowDiv);
+        productPictureDiv.appendTo(innerCol3Div);
+        innerCol3Div.appendTo(innerRowDiv);
 
         productDescriptionDiv.html('<h4>'+this.cartItems[i]['product_name']+'</h4><br><span class="delete">Delete</span>');
-        productDescriptionDiv.appendTo(innerCol7Div);
-        innerCol7Div.appendTo(innerRowDiv);
+        productDescriptionDiv.appendTo(col9Div);
+        col9Div.appendTo(innerRowDiv);
 
         innerRowDiv.appendTo(itemDetailsDiv);
         itemDetailsDiv.appendTo(outerCol7Div);
@@ -156,8 +160,12 @@ Cart.prototype.render = function() {
     }
 
     if(i === 0) {
+        $('.checkout').hide();
         var empty = '<h3>Your cart is empty</h3><br><br>';
         $('.product-list-body').html(empty);
+    }else {
+        $('.subtotal-price').text('$'+this.amount);
+        $('.checkout').show();
     }
 };
 
