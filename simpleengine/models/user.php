@@ -58,6 +58,14 @@ class User implements DbModelInterface
             throw new \Exception("We experience technical problems. Please try again later.");
     }
 
+    public function addItemToCart($id_product, $produtc_price) {
+        $app = Application::instance();
+        $sql = "INSERT INTO cart (`id_user`, `id_product`, `product_price`)
+                VALUES (".$this->id.", '".$id_product."', '".$produtc_price."');";
+        if(!$app->db()->insertDataToDb($sql))
+            throw new \Exception("We experience technical problems. Please try again later.");
+    }
+
     public function save()
     {
         // TODO: Implement save() method.
