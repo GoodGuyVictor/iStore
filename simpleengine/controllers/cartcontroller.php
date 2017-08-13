@@ -29,4 +29,12 @@ class CartController extends AbstractController
         echo json_encode($usersCart->expose());
     }
 
+    public function actionDelete() {
+        $auth = new Authentication($_SESSION['email']);
+        $userId = $auth->getIdByEmail();
+        $user = new User($userId);
+        $user->deleteItemFromCart($_POST['id_product']);
+
+    }
+
 }
