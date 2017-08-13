@@ -11,12 +11,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
-    <script src="../../../public/js/cart22.js"></script>
+    <script src="../../../public/js/cart333333.js"></script>
     <script>
 
         $(document).ready(function () {
-        var cart = new Cart();
+            var cart = new Cart();
+            console.log(cart.cartItems);
+            $(document).on('click', '.delete', function () {
+                var product = $(this).parent().attr('id').split('-')[1];
+                cart.delete(product);
 
+            });
+
+            $('#clear-btn').on('click', function () {
+
+            })
         })
     </script>
     <style>
@@ -156,6 +165,12 @@
 
         .product-list-body img {
             width: 100%;
+        }
+
+        .delete {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
         }
     </style>
 </head>
