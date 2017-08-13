@@ -13,10 +13,6 @@ function Cart() {
 Cart.prototype = Object.create(Container.prototype);
 Cart.prototype.constructor = Cart;
 
-Cart.prototype.getGoodsCount = function () {
-    return this.goodsCount;
-};
-
 Cart.prototype.delete = function(product) {
     var deleted_elements = [];
     for(var i = 0; i < this.goodsCount; i++){
@@ -28,7 +24,7 @@ Cart.prototype.delete = function(product) {
 
     if(deleted_elements.length !== 0) {
         this.goodsCount--;
-        this.amount -= deleted_elements[0].price;
+        this.amount -= deleted_elements[0]['product_price'];
         this.refresh();
 
         $.ajax({
@@ -112,7 +108,8 @@ Cart.prototype.render = function() {
         });
 
         var select = $('<select />', {
-            name: 'quantity'
+            name: 'quantity',
+            id: 'quantity-item-'+this.cartItems[i]['id_product']
         });
 
         var img = $('<img />', {

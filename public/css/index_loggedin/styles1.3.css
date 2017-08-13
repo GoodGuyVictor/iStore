@@ -285,19 +285,20 @@ footer a:hover {
   .product-box:hover .add-to-cart-btn {
     display: block; }
 
-  .check {
-    font-size: 200%;
-    position: absolute;
-    top: 90px;
-    left: 50px;
-    color: white;
-  }
+.fa-check {
+  display: none;
+  font-size: 400%;
+  position: absolute;
+  top: 130px;
+  left: 150px;
+  color: white;
+}
 
 .add-to-cart-btn {
   display: none;
   position: absolute;
-  top: 90px;
-  left: 50px;
+  top: 130px;
+  left: 120px;
   padding: 5px 10px;
   border: 1px white solid;
   color: white;
