@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../../../public/css/signup/styles1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
+    <script>
+        $(document).ready(function() {
+           $('#login').on('click', function () {
+               var email = $('#email').val();
+               var password = $('#password').val();
+
+               $.ajax({
+                   url: '/user/login/',
+                   type: 'POST',
+                   data: {"email": email, "password": password},
+                   success: function() {
+                       location.href = '/review/login/'
+                   }
+               })
+           })
+        });
+    </script>
+    <style type="text/css">
+        .wrapper {
+            width: 400px;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .fLeft {
+            float: left;
+        }
+
+        .logo {
+            width: 150px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+
+        .logo-text {
+            font-size: 140%;
+            padding-top: 15px;
+            margin-left: 10px;
+        }
+
+        #login {
+            width: 100%;
+            background: #f38191;
+            border-radius: 3px;
+            padding: 6px 15px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        #login:hover {
+            background: #f45a6f;
+        }
+
+        .wrapper-error {
+            width: 400px;
+            border: 1px solid #AD1616;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .red {
+            color: #AD1616;
+        }
+
+    </style>
+</head>
+<body>
+<div class="logo">
+    <a href="/" style="color: black; text-decoration: none;">
+        <div class="banner fLeft">
+            <img src="../../../public/pics/index/Group%202.png" alt="...">
+        </div>
+        <div class="logo-text fLeft">
+            BRAN<span style="font-weight: bold; color: #F38191;">D</span>
+        </div>
+    </a>
+</div>
+<div id="errorMessage" class="wrapper-error">
+    <div class="row">
+        <div class="col-sm-2" style="font-size:190%;"><i class="fa fa-exclamation-triangle red" aria-hidden="true"></i></div>
+        <div class="col-sm-10">
+            <h4><span class="red">There was a problem</span></h4>
+            <div class="error-message-field">
+                {{error}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <h2>Log in to your account</h2>
+    <br />
+    <form method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" />
+        <br />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" />
+        <br />
+        <input type="submit" id="login" value="Log in" />
+        <br />
+        <br />
+    </form>
+    <a href="/signup/"><u>Create new account</u></a>
+</div>
+</body>
+</html>

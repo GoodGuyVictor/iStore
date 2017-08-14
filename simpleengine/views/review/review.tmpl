@@ -1,0 +1,1014 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brand</title>
+    <!--Bootstrap 3-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="review-styles.css">
+    <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../../public/js/container.js"></script>
+    <script src="../../../public/js/cart4.4.js"></script>
+    <style type="text/css">
+        .fa-check {
+            display: none;
+            font-size: 400%;
+            position: absolute;
+            top: 130px;
+            left: 150px;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0; }
+
+        html, body {
+            width: 100%;
+            height: 100%; }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        .container {
+            margin: 0;
+            padding: 0; }
+
+        .bold {
+            font-weight: bold; }
+
+        .wrapper {
+            padding: 0 216px; }
+
+        .fLeft {
+            float: left; }
+
+        .fRight {
+            float: right; }
+
+        .logo {
+            width: 200px; }
+
+        .logo-text {
+            font-size: 130%;
+            padding-top: 15px;
+            margin-left: 10px; }
+
+        header {
+            padding-top: 30px;
+            position: relative; }
+
+        .drop-down-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1; }
+
+        .drop-down-menu a {
+            display: block;
+            color: black;
+            padding: 8px 12px;
+            text-decoration: none; }
+
+        .drop-down-menu a:hover {
+            background-color: #E8E8E8; }
+
+        #header-search-bar {
+            padding: 6px 0 6px 10px;
+            width: 100%;
+            border: 1px #e6e6e6 solid;
+            border-right: none;
+            border-left: none; }
+
+        .drop-down-btn {
+            border: 1px #e6e6e6 solid;
+            background: #f5f5f5;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            padding: 0 4px; }
+
+        .drop-down-btn:hover {
+            background: #e6e6e6; }
+
+        #header-search-btn {
+            padding: 9px 10px;
+            border: 1px #e6e6e6 solid;
+            background: #f5f5f5;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            cursor: pointer; }
+
+        #header-search-btn:hover {
+            background: #e6e6e6; }
+
+        #cart {
+            margin-right: 20px;
+            cursor: pointer; }
+
+        #myAccount {
+            position: relative;
+        }
+
+        #myAccount-btn {
+            border: none;
+            background: #f38191;
+            padding: 6px 15px;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer; }
+
+        .myAccount-menu {
+            padding: 10px;
+            position: absolute;
+            top: 40px;
+            border-radius: 6px;
+            background-color: #e0e0e0;
+            min-width: 260px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            border: 1px solid grey;
+            opacity: 0;
+            transition: opacity .3s;
+            z-index: 1;
+        }
+
+        .show-myAccount-menu {
+            opacity: 1;
+        }
+
+        #login-btn {
+            background: #f38191;
+            color: white;
+            cursor: pointer;
+        }
+
+        #login-btn:hover {
+            background: #f45a6f;
+        }
+
+        #myAccount-btn:hover {
+            background: #f45a6f; }
+
+        .account {
+            padding-top: 7px; }
+
+        .search-box {
+            padding-top: 7px; }
+
+        ul {
+            list-style-type: none;
+            margin-top: -17px; }
+
+        li a {
+            float: left;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold; }
+
+        li a:hover {
+            background: #E8E8E8;
+            text-decoration: none;
+            color: black; }
+
+        #header-menu {
+            width: 690px;
+            margin: 0 auto; }
+
+        #subscribe {
+            position: relative;
+            padding-top: 100px;
+            display: block;
+            height: 438px; }
+
+        #subscribe:after {
+            content: "";
+            background-image: url("/public/pics/index/Rectangle 9.png");
+            background-position: center top;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1; }
+
+        .right-section {
+            text-align: center; }
+
+        .email-bar input {
+            width: 250px;
+            background: #eaeaea;
+            border: none;
+            padding: 10px 0 10px 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            outline: none; }
+
+        .subscribe-btn input {
+            border: none;
+            padding: 10px 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background: #f38191;
+            color: white;
+            cursor: pointer; }
+
+        .subscribe-btn input:hover {
+            background: #f45a6f; }
+
+        footer {
+            padding-top: 100px; }
+
+        footer h5 {
+            color: #f38191; }
+
+        footer a {
+            color: grey;
+            text-decoration: none; }
+
+        footer a:hover {
+            text-decoration: none;
+            color: grey; }
+
+        #copyright {
+            background: #e6e6e6;
+            height: 50px;
+            padding-top: 14px; }
+
+        .network-button {
+            padding-top: 7px;
+            text-align: center;
+            background: white;
+            margin-right: 7px;
+            height: 30px;
+            width: 30px;
+            float: left; }
+
+        .network-button:hover {
+            color: white;
+            background: #f45a6f; }
+
+        .drop-down {
+            position: relative;
+            width: 100%;
+            height: 34px; }
+
+        .show {
+            display: block; }
+
+        #slider {
+            background: #E8E8E8;
+            width: 100%;
+            text-align: center; }
+        #slider img {
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%; }
+
+        .category-picture {
+            width: 100%; }
+
+        .upper-banner {
+            position: relative;
+            margin-bottom: 20px; }
+
+        #hot-deal-for-men {
+            position: absolute;
+            top: 20px; }
+
+        .lower-banner {
+            position: relative; }
+
+        #luxurious-accesories {
+            position: absolute;
+            top: 20px; }
+
+        #offer-women {
+            position: absolute;
+            top: 20px; }
+
+        #for-kids {
+            position: absolute;
+            top: 20px; }
+
+        #category {
+            padding: 70px 0; }
+
+        #product {
+            text-align: center;
+            padding: 50px 0; }
+
+        .feature-box {
+            width: 100%;
+            background: #2B2C2D;
+            height: 500px; }
+
+        #feature {
+            padding: 50px 0; }
+
+        .feature-description {
+            color: white;
+            padding: 40px 20px; }
+
+        .product-box {
+            position: relative;
+            cursor: pointer;
+            transition: all .3s;
+            background: white; }
+
+        .product-box:hover {
+            box-shadow: 5px 5px 20px grey;
+            transform: scale(1.05, 1.05); }
+
+        .product-text {
+            text-align: left;
+            padding: 5px; }
+
+        #browse-all-btn {
+            background: #f38191;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer; }
+
+        #browse-all-btn:hover {
+            background: #f45a6f; }
+
+        .pink {
+            color: #f38191; }
+
+        .responsive-header {
+            position: absolute;
+            display: none;
+            width: 100%; }
+
+        .logo-responsive {
+            float: left;
+            background: #222222;
+            padding: 15px 17px 15px 10px; }
+        .logo-responsive img {
+            width: 40px; }
+
+        .search-button-responsive {
+            cursor: pointer;
+            float: left;
+            padding: 20px;
+            font-size: 180%; }
+
+        .burger-menu {
+            cursor: pointer;
+            border: none;
+            font-size: 280%;
+            padding: 12px;
+            background: transparent; }
+
+        .account-responsive {
+            padding: 14px; }
+        .account-responsive img {
+            width: 35px; }
+
+        .cart-responsive {
+            background: #222222;
+            padding: 15px; }
+        .cart-responsive img {
+            width: 35px; }
+
+        .category-banner-resp img {
+            width: 100%; }
+
+        .category-banner-resp {
+            width: 100%; }
+
+        .responsive-category {
+            display: none; }
+
+        .lower-row {
+            margin-top: 50px; }
+
+        #subscribe-responsive {
+            display: none;
+            padding: 50px 0; }
+
+        @media screen and (max-width: 1200px) {
+            .feature-banner {
+                display: none; }
+
+            .feature-description {
+                padding: 70px 216px;
+                text-align: center; }
+
+            #feature .wrapper {
+                padding: 0; }
+
+            .feature-box {
+                height: 300px; }
+
+            .right-section {
+                display: none; }
+
+            .left-section {
+                text-align: center; }
+
+            #subscribe-responsive {
+                display: block; } }
+        .footer-description {
+            color: grey; }
+
+        @media screen and (max-width: 1295px) {
+            .wrapper {
+                padding: 0 150px; } }
+        @media screen and (max-width: 1165px) {
+            .wrapper {
+                padding: 0 80px; } }
+        @media screen and (max-width: 1024px) {
+            header {
+                padding: 0; }
+
+            .desktop-header {
+                display: none; }
+
+            .responsive-header {
+                display: block; } }
+        @media screen and (max-width: 992px) {
+            .desktop-category {
+                display: none; }
+
+            .responsive-category {
+                display: block; }
+
+            .responsive-category .wrapper {
+                padding: 0 100px; } }
+        @media screen and (max-width: 1200px) {
+            .product-box {
+                transform: scale(0.9); }
+
+            .lower-row {
+                margin-top: 10px; }
+
+            #subscribe {
+                padding-top: 50px; }
+
+            footer .wrapper {
+                padding: 0 100px; } }
+        @media screen and (max-width: 992px) {
+            .product-box {
+                transform: scale(0.8); }
+
+            #browse-all-btn {
+                width: 100%;
+                height: 100px;
+                font-size: 220%;
+                background: white;
+                color: #f38191;
+                border: 1px #f38191 solid; }
+
+            #browse-all-btn:hover {
+                color: white; }   }
+
+        #sub-button {
+            outline: none;
+        }
+
+        #header-search-bar:focus {
+            border-color: #F38191;
+            box-shadow: 0 1px 1px #F38191 inset, 0 0 8px #F38191;
+            outline: 0 none;
+        }
+
+        #image-slider {
+            text-align: center;
+            background: #f7f7f7;
+            border-bottom: 1px #eaeaea solid;
+            border-top: 1px #eaeaea solid;
+        }
+
+        #product-description {
+            width: 1140px;
+            border: 1px #eaeaea solid;
+            margin: 0 auto;
+            text-align: center;
+            top: -40px;
+            position: relative;
+            background: white;
+            padding: 70px 200px 120px 200px;
+        }
+
+        .material-designer {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #red {
+            position: relative;
+            top: -4px;
+            margin: 0 auto;
+            width: 90px;
+            height: 6px;
+            background: #ef5b70;
+        }
+
+        .option {
+            text-align: left;
+        }
+
+        #options {
+            width: 670px;
+            margin: 0 auto;
+        }
+
+        select {
+            padding: 10px 10px;
+            width: 170px;
+        }
+
+        .add-to-cart-btn {
+            background: white;
+            border: 1px #F38191 solid;
+            color: #F38191;
+            padding: 6px 15px;
+            cursor: pointer;
+            width: 91%;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #F38191;
+            color: white;
+            transition: .3s;
+        }
+
+        #you-may-also-like {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .product-box {
+            text-align: left;
+            width: 200px;
+            margin-right: 25px;
+        }
+
+        #product-picture {
+            width: 400px;
+        }
+
+        .product-text {
+            padding: 1px 5px;
+        }
+
+        /*# sourceMappingURL=styles11.csss.map */
+
+    </style>
+    <script>
+//        function checkGoodsThatAreAlreadyInCart() {
+//            for(var i = 0; i < cart.goodsCount; i++){
+//                var id = cart.cartItems[i]['id_product'];
+//                var addToCartBtn = $('#goods').find('#'+id);
+//                addToCartBtn.parent().find('img').css('filter', 'brightness(50%)');
+//                addToCartBtn.parent().find('.fa-check').show();
+//                addToCartBtn.hide();
+//            }
+//        }
+
+        $(document).ready(function () {
+
+//            checkGoodsThatAreAlreadyInCart();
+
+//            $('.number-of-items-within-the-cart').text(cart.goodsCount);
+
+
+            $('.product-box').on('click', function () {
+                var product_name = $(this).find('.product-name').text().toLowerCase();
+                var picture = product_name.split(' ').join('_');
+                picture += '.png';
+                var price = $(this).find('.product-price').text().split('$')[1];
+
+                $.ajax({
+                    url: '/review/formdata/',
+                    type: 'post',
+                    data: {"picture": picture,
+                        "product_name": product_name.toUpperCase(),
+                        "price": price},
+                    success: function () {
+                        location.href = '/review/';
+                    }
+                });
+            });
+
+
+            /*cart logic*/
+            $('.add-to-cart-btn').on('click', function () {
+//                var product_name = $('#product-name').text().toLowerCase();
+//                var id = $('.product-id').text().split('#')[1];
+//                var price = $('.product-price').text().split('$')[1];
+
+                $.ajax({
+                    url: '/cart/add/',
+                    type: 'POST',
+                    success: function (data) {
+                        location.href = '/review/login/';
+                    }
+                });
+
+            })
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="desktop-header">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="/" style="color: black; text-decoration: none;">
+                            <div class="banner fLeft">
+                                <img src="../../../public/pics/index/Group 2.png" alt="logo">
+                            </div>
+                            <div class="logo-text fLeft">
+                                BRAN<span style="font-weight: bold; color: #F38191;">D</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search-box">
+                        <div class="row">
+                            <div class="col-md-2" style="padding: 0;">
+                                <div class="drop-down">
+                                    <button class="drop-down-btn">Browse <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                    <div class="drop-down-menu">
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                        <a href="#">Home</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7" style="padding: 0;">
+                                <div class="search-bar">
+                                    <input id="header-search-bar" type="text" placeholder="Search for item...">
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="padding: 0;">
+                                <div class="search-button">
+                                    <button id="header-search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="account">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div id="myAccount">
+                                    <button id="myAccount-btn">My Account <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                                    <div class="myAccount-menu">
+                                        <form>
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" />
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password" />
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <button id="login-btn" type="submit" class="btn">Log in</button>
+                                                </div>
+                                                <div class="col-sm-1" style="padding-top:5px;"><b>or</b></div>
+                                                <div class="col-sm-5" style="padding-top:5px;">
+                                                    <a href="signup/" style="font-size:120%;"><b><u>Sign up</u></b></a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <hr style="margin-bottom: 17px;">
+        <nav id="header-menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">KIDS</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">FUATURE</a></li>
+                <li><a href="#">HOT DEAL</a></li>
+            </ul>
+        </nav>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="responsive-header">
+        <div class="left-container fLeft">
+            <a href="#">
+                <div class="logo-responsive">
+                    <img src="../../../public/pics/index/Group 2.png" alt="...">
+                </div>
+            </a>
+            <div class="search-button-responsive">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="right-container fRight">
+            <button class="burger-menu fLeft">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <a href="#">
+                <div class="account-responsive fLeft">
+                    <img src="../../../public/pics/index/account-responsive.png" alt="...">
+                </div>
+            </a>
+            <a href="#">
+                <div class="cart-responsive fLeft">
+                    <img src="../../../public/pics/index/cart-resp.png" alt="...">
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+<main>
+    <section id="image-slider">
+        <div class="picture">
+            <img id="product-picture" src="../../../public/pics/cart/products/{{picture}}" alt="...">
+        </div>
+    </section>
+    <section id="product-description">
+        <hgroup>
+            <h5 style="color: #ef5b70;">WOMEN COLLECTION</h5>
+            <div id="underscore">
+                <hr style="width: 150px; height:2px; border:none; background-color:#eaeaea; margin: 0 auto;">
+                <div id="red"></div>
+            </div>
+            <h3><span class="product-id">#{{id}}</span> <span id="product-name">{{product_name}}</span></h3>
+        </hgroup>
+        <br>
+        <br>
+        <p>Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. </p>
+        <div class="material-designer">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id="material">
+                        <h5><span style="color: #b9b9b9;">MATERIAL:</span> COTTON</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="designer">
+                        <h5><span style="color: #b9b9b9;">DESIGNER:</span> BINBURHAN</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <br>
+        <div class="product-price">
+            <h3><span id="product-price" style="color: #ef5b70;">${{price}}</span></h3>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div id="options">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="choose-color" class="option">
+                        <h5>CHOOSE COLOR</h5>
+                        <select id="color">
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div id="choose-size" class="option">
+                        <h5>CHOOSE SIZE</h5>
+                        <select id="size">
+                            <option value="xxl">XXL</option>
+                            <option value="xl">XL</option>
+                            <option value="l">L</option>
+                            <option value="m">M</option>
+                            <option value="s">S</option>
+                            <option value="xs">XS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div id="choose-quantity" class="option" style="margin-right: 0;">
+                        <h5>QUANTITY</h5>
+                        <input id="quantity" type="number" placeholder="2" style="width: 150px; padding: 5px 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <br>
+        <div id="add-to-cart">
+            <button class="add-to-cart-btn"><span style="font-size: 170%;"><i class="fa fa-cart-plus" aria-hidden="true"></i></span> Add to Cart</button>
+        </div>
+    </section>
+    <section id="you-may-also-like">
+        <hgroup>
+            <h3>YOU MAY ALSO LIKE</h3>
+        </hgroup>
+        <br>
+        <br>
+        <div class="wrapper">
+            <div class="products">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="product-box">
+                            <img src="../../../public/pics/cart/products/black_and_white_dress.png" alt="..." style="width: 100%;">
+                            <br>
+                            <div class="product-text">
+                                <p><span class="bold product-name">BLACK AND WHITE DRESS</span></p>
+                                <p><span class="bold product-price" style="color: #f45a6f;">$39.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="product-box" style="margin-top: -10px">
+                            <img src="../../../public/pics/cart/products/red_t-shirt.png" alt="..." style="width: 100%;">
+                            <div class="product-text">
+                                <p><span class="bold product-name">RED T-SHIRT</span></p>
+                                <p><span class="bold product-price" style="color: #f45a6f;">$35.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="product-box">
+                            <img src="../../../public/pics/cart/products/blue_jacket.png" alt="..." style="width: 100%;">
+                            <div class="product-text">
+                                <p><span class="bold product-name">BLUE JACKET</span></p>
+                                <p><span class="bold product-price" style="color: #f45a6f;">$52.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="product-box">
+                            <img src="../../../public/pics/cart/products/biege_pants.png" alt="..." style="width: 100%;">
+                            <div class="product-text">
+                                <p><span class="bold product-name">BIEGE PANTS</span></p>
+                                <p><span class="bold product-price" style="color: #f45a6f;">$40.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+    <section id="subscribe">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="left-section">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="avatar">
+                                    <img src="../../../public/pics/index/Layer 40.png" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="text">
+                                    <p><strong><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                        a pulvinar purus condimentum a. Aliquam condimentum
+                                        mattis neque sed pretium"</i></strong></p>
+                                    <span style="color: #F38191;"><strong>Bin Burhan</strong></span><br>
+                                    <span>Dhaka, Bc</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="right-section">
+                        <hgroup>
+                            <h3>SUBSCRIBE</h3>
+                            <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                        </hgroup>
+                        <br>
+                        <div id="email-box">
+                            <div class="email-bar fLeft">
+                                <input type="email" placeholder="Enter Your Email">
+                            </div>
+                            <div class="subscribe-btn fLeft">
+                                <input type="submit" id="sub-button" value="Subscribe">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="wrapper" style="padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="logo-footer">
+                    <img class="fLeft" src="../../../public/pics/index/Group%202.png" alt="logo">
+                    <div class="logo-text fLeft">BRAN<span class="bold" style="color: #F38191;">D</span></div>
+                    <div style="clear: both;"></div>
+                    <br>
+                    <div class="footer-description" style="color: grey; width: 100%;">
+                        <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.</p>
+                        <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+                            Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div id="company">
+                                <h5>COMPANY</h5>
+                                <br>
+                                <p><a href="#">Home</a></p>
+                                <p><a href="#">Shop</a></p>
+                                <p><a href="#">About</a></p>
+                                <p><a href="#">How it Works</a></p>
+                                <p><a href="#">Contact</a></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div id="information">
+                                <h5>INFORMATION</h5>
+                                <br>
+                                <p><a href="#">Terms and Conditions</a></p>
+                                <p><a href="#">Privacy Policy</a></p>
+                                <p><a href="#">How to buy</a></p>
+                                <p><a href="#">How to sell</a></p>
+                                <p><a href="#">Promotion</a></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div id="shop-category">
+                                <h5>SHOP CATEGORY</h5>
+                                <br>
+                                <p><a href="#">Men</a></p>
+                                <p><a href="#">Women</a></p>
+                                <p><a href="#">Child</a></p>
+                                <p><a href="#">Apparel</a></p>
+                                <p><a href="#">Browse all</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="wrapper">
+            <div class="rights fLeft" style="font-size: 110%;">
+                &copy; 2017 Brand All Rights Reserved
+            </div>
+            <div class="network" style="float: right;">
+                <a href="#" id="facebook" class="network-button"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" id="twitter" class="network-button"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" id="linkedin" class="network-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#" id="pinterest" class="network-button"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                <a href="#" id="google-plus" class="network-button"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+    $(".drop-down-btn").click(function(){
+        $(".drop-down-menu").toggleClass('show');
+    });
+
+    $(".shipping-adress-opener").click(function(){
+        $(".shipping-adress-content").toggleClass("show");
+        $(".shipping-adress-content").toggleClass("expand-height");
+    });
+
+    $('#myAccount-btn').on('click', function(){
+        $('.myAccount-menu').toggleClass('show-myAccount-menu');
+    });
+</script>
+
+</body>
+</html>
