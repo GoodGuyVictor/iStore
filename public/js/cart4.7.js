@@ -140,7 +140,7 @@ Cart.prototype.render = function() {
         productPictureDiv.appendTo(innerCol3Div);
         innerCol3Div.appendTo(innerRowDiv);
 
-        productDescriptionDiv.html('<h4>#<span class="product-id">'+this.cartItems[i]['id_product']+'</span> '+this.cartItems[i]['product_name']+'</h4><br><span class="delete">Delete</span>');
+        productDescriptionDiv.html('<h4>#<span class="product-id">'+this.cartItems[i]['id_product']+'</span> <span class="product-name">'+this.cartItems[i]['product_name']+'</span></h4><br><span class="delete">Delete</span>');
         productDescriptionDiv.appendTo(col9Div);
         col9Div.appendTo(innerRowDiv);
 
