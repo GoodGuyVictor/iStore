@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
-    <script src="../../../public/js/cart4.4.js"></script>
+    <script src="../../../public/js/cart4.7.js"></script>
     <style type="text/css">
         .fa-check {
             display: none;
@@ -46,6 +46,26 @@
                     type: 'POST',
                     data: {"logout": true}
                 })
+            });
+
+            $('.product-box').on('click', function () {
+                var product_name = $(this).find('.product-name').text().toLowerCase();
+                var picture = product_name.split(' ').join('_');
+                picture += '.png';
+                var price = $(this).find('.product-price').text().split('$')[1];
+                var id = $(this).find('.product-id').text().split('#')[1];
+alert('product box')
+//                $.ajax({
+//                    url: '/review/formdata/',
+//                    type: 'post',
+//                    data: {"picture": picture,
+//                        "product_name": product_name.toUpperCase(),
+//                        "price": price,
+//                        "id": id},
+//                    success: function () {
+//                        location.href = '/review/';
+//                    }
+//                });
             });
 
 
