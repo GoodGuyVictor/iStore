@@ -17,6 +17,7 @@ class ReviewController extends AbstractController
 
     public function actionIndex()
     {
+        session_start();
         $product_name = $_SESSION['review']['product_name'];
         $picture = $_SESSION['review']['picture'];
         $price = $_SESSION['review']['price'];
@@ -44,6 +45,7 @@ class ReviewController extends AbstractController
     }
 
     public function actionLogin(){
+        session_start();
         if($_SESSION['error']) {
             $error = $_SESSION['error'];
             echo $this->render('review_login_error', [
@@ -55,6 +57,7 @@ class ReviewController extends AbstractController
     }
 
     public function actionFormData() {
+        session_start();
         $_SESSION['review']['picture'] = $_POST['picture'];
         $_SESSION['review']['product_name'] = $_POST['product_name'];
         $_SESSION['review']['price'] = $_POST['price'];

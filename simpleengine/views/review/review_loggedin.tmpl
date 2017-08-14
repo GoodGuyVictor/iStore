@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
-    <script src="../../../public/js/cart4.4.js"></script>
+    <script src="../../../public/js/cart4.7.js"></script>
     <style type="text/css">
         .fa-check {
             display: none;
@@ -546,7 +546,7 @@
         var added = false;
 
         function checkGoodsThatAreAlreadyInCart() {
-            var id = $('.product-id').text();
+            var id = $('#product-id').text();
             for(var i = 0; i < cart.goodsCount; i++){
                 if(cart.cartItems[i]['id_product'] === id) {
                     var addToCartBtn = $('.add-to-cart-btn');
@@ -577,13 +577,15 @@
                 var picture = product_name.split(' ').join('_');
                 picture += '.png';
                 var price = $(this).find('.product-price').text().split('$')[1];
+                var id = $(this).find('.product-id-box').text();
 
                 $.ajax({
                     url: '/review/formdata/',
                     type: 'post',
                     data: {"picture": picture,
                         "product_name": product_name.toUpperCase(),
-                        "price": price},
+                        "price": price,
+                        "id": id},
                     success: function () {
                         location.href = '/review/';
                     }
@@ -594,10 +596,8 @@
             /*cart logic*/
             $('.add-to-cart-btn').on('click', function () {
                 if(!added) {
-                    var id = $('.product-id').text();
+                    var id = $('#product-id').text();
                     var price = $('#product-price').text().split('$')[1];
-                    alert(id)
-                    alert(price)
 
                     $.ajax({
                         url: '/cart/add/',
@@ -606,6 +606,7 @@
                     });
                     $('.number-of-items-within-the-cart').text(++cart.goodsCount);
                     $(this).text('Added to your cart');
+                    added = true;
                 }
             })
         })
@@ -737,7 +738,7 @@
                 <hr style="width: 150px; height:2px; border:none; background-color:#eaeaea; margin: 0 auto;">
                 <div id="red"></div>
             </div>
-            <h3>#<span class="product-id">{{id}}</span> <span id="product-name">{{product_name}}</span></h3>
+            <h3>#<span id="product-id">{{id}}</span> <span id="product-name">{{product_name}}</span></h3>
         </hgroup>
         <br>
         <br>
@@ -820,7 +821,7 @@
                             <img src="../../../public/pics/cart/products/black_and_white_dress.png" alt="..." style="width: 100%;">
                             <br>
                             <div class="product-text">
-                                <p><span class="bold product-name">BLACK AND WHITE DRESS</span></p>
+                                <p><b>#<span class="product-id-box">5</span></b> <span class="bold product-name">BLACK AND WHITE DRESS</span></p>
                                 <p><span class="bold product-price" style="color: #f45a6f;">$39.00</span></p>
                             </div>
                         </div>
@@ -829,7 +830,7 @@
                         <div class="product-box" style="margin-top: -10px">
                             <img src="../../../public/pics/cart/products/red_t-shirt.png" alt="..." style="width: 100%;">
                             <div class="product-text">
-                                <p><span class="bold product-name">RED T-SHIRT</span></p>
+                                <p><b>#<span class="product-id-box">2</span></b> <span class="bold product-name">RED T-SHIRT</span></p>
                                 <p><span class="bold product-price" style="color: #f45a6f;">$35.00</span></p>
                             </div>
                         </div>
@@ -838,7 +839,7 @@
                         <div class="product-box">
                             <img src="../../../public/pics/cart/products/blue_jacket.png" alt="..." style="width: 100%;">
                             <div class="product-text">
-                                <p><span class="bold product-name">BLUE JACKET</span></p>
+                                <p><b>#<span class="product-id-box">3</span></b> <span class="bold product-name">BLUE JACKET</span></p>
                                 <p><span class="bold product-price" style="color: #f45a6f;">$52.00</span></p>
                             </div>
                         </div>
@@ -847,7 +848,7 @@
                         <div class="product-box">
                             <img src="../../../public/pics/cart/products/biege_pants.png" alt="..." style="width: 100%;">
                             <div class="product-text">
-                                <p><span class="bold product-name">BIEGE PANTS</span></p>
+                                <p><b>#<span class="product-id-box">7</span></b> <span class="bold product-name">BIEGE PANTS</span></p>
                                 <p><span class="bold product-price" style="color: #f45a6f;">$40.00</span></p>
                             </div>
                         </div>
