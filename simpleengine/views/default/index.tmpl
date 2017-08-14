@@ -18,6 +18,28 @@
                     data: {'email': email, 'password': pass}
                 });
             });
+
+            $('.product-box').on('click', function () {
+                var product_name = $(this).find('.product-name').text().toLowerCase();
+                var picture = product_name.split(' ').join('_');
+                picture += '.png';
+                var price = $(this).find('.product-price').text().split('$')[1];
+                var id = $(this).find('.product-id').text().split('#')[1];
+
+                $.ajax({
+                    url: '/review/formdata/',
+                    type: 'post',
+                    data: {"picture": picture,
+                           "product_name": product_name.toUpperCase(),
+                           "price": price,
+                            "id": id},
+                    success: function () {
+                        location.href = '/review/';
+                    }
+                });
+            });
+
+
         });
     </script>
 </head>
@@ -222,7 +244,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/1.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>WHITE T-SHIRT</strong></span></p>
+                                    <p><span class="product-id bold">#1</span> <span class="product-name"><strong>WHITE T-SHIRT</strong></span></p>
                                     <p><span class="bold pink product-price">$30.00</span></p>
                                 </div>
                             </div>
@@ -231,7 +253,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/2.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>RED T-SHIRT</strong></span></p>
+                                    <p><span class="product-id bold">#2</span> <span class="product-name"><strong>RED T-SHIRT</strong></span></p>
                                     <p><span class="bold pink product-price">$35.00</span></p>
                                 </div>
                             </div>
@@ -240,7 +262,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/3.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>BLUE JACKET</strong></span></p>
+                                    <p><span class="product-id bold">#3</span> <span class="product-name"><strong>BLUE JACKET</strong></span></p>
                                     <p><span class="bold pink product-price">$52.00</span></p>
                                 </div>
                             </div>
@@ -249,7 +271,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/4.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>FLOWERED DRESS</strong></span></p>
+                                    <p><span class="product-id bold">#4</span> <span class="product-name"><strong>FLOWERED DRESS</strong></span></p>
                                     <p><span class="bold pink product-price">$38.00</span></p>
                                 </div>
                             </div>
@@ -262,7 +284,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/5.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>BLACK AND WHITE DRESS</strong></span></p>
+                                    <p><span class="product-id bold">#5</span> <span class="product-name"><strong>BLACK AND WHITE DRESS</strong></span></p>
                                     <p><span class="bold pink product-price">$39.00</span></p>
                                 </div>
                             </div>
@@ -271,7 +293,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/6.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>GREY JACKET</strong></span></p>
+                                    <p><span class="product-id bold">#6</span> <span class="product-name"><strong>GREY JACKET</strong></span></p>
                                     <p><span class="bold pink product-price">$49.00</span></p>
                                 </div>
                             </div>
@@ -280,7 +302,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/7.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                    <p><span class="product-name"><strong>BIEGE PANTS</strong></span></p>
+                                    <p><span class="product-id bold">#7</span> <span class="product-name"><strong>BIEGE PANTS</strong></span></p>
                                     <p><span class="bold pink product-price">$40.00</span></p>
                                 </div>
                             </div>
@@ -289,7 +311,7 @@
                             <div class="product-box">
                                 <img src="../../../public/pics/index/8.png" alt="..." style="width: 100%;">
                                 <div class="product-text">
-                                  <p><span class="product-name"><strong>WHITE SHORTS</strong></span></p>
+                                  <p><span class="product-id bold">#8</span> <span class="product-name"><strong>WHITE SHORTS</strong></span></p>
                                     <p><span class="bold pink product-price">$35.00</span></p>
                                 </div>
                             </div>
@@ -402,49 +424,47 @@
           </div>
         </section>
         <section id="subscribe">
-            <div class="wrapper">
-               <div class="row">
-                  <div class="left-section col-lg-7 col-md-12">
-                      <div class="row">
-                          <div class="col-lg-3 col-md-12">
-                              <div class="avatar">
-                                  <img src="../../../public/pics/index/Layer 40.png" alt="...">
-                              </div>
-                          </div>
-                          <div class="col-lg-9 col-md-12">
-                              <div class="text">
-                                  <p><strong><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
-          a pulvinar purus condimentum a. Aliquam condimentum
-                                      mattis neque sed pretium"</i></strong></p>
-                                  <span style="color: #F38191;"><strong>Bin Burhan</strong></span><br>
-                                  <span>Dhaka, Bc</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="right-section col-lg-5">
-                      <hgroup>
-                          <h3>SUBSCRIBE</h3>
-                          <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
-                      </hgroup>
-                      <br>
-                      <div class="email-box">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="left-section">
                         <div class="row">
-                         <div class="col-md-9" style="padding: 0;">
-                            <div class="email-bar">
-                                <input type="email" style="width: 100%;" placeholder="Enter Your Email">
+                            <div class="col-sm-3">
+                                <div class="avatar">
+                                    <img src="../../../public/pics/index/Layer 40.png" alt="...">
+                                </div>
                             </div>
-                          </div>
-                          <div class="col-md-3" style="padding: 0;">
-                            <div class="subscribe-btn">
-                                <input type="submit" class="sub-button" value="Subscribe">
-                            </div>    
-                          </div>
+                            <div class="col-sm-9">
+                                <div class="text">
+                                    <p><strong><i>"Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                                        a pulvinar purus condimentum a. Aliquam condimentum
+                                        mattis neque sed pretium"</i></strong></p>
+                                    <span style="color: #F38191;"><strong>Bin Burhan</strong></span><br>
+                                    <span>Dhaka, Bc</span>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                  </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="right-section">
+                        <hgroup>
+                            <h3>SUBSCRIBE</h3>
+                            <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                        </hgroup>
+                        <br>
+                        <div id="email-box">
+                            <div class="email-bar fLeft">
+                                <input type="email" placeholder="Enter Your Email">
+                            </div>
+                            <div class="subscribe-btn fLeft">
+                                <input type="submit" id="sub-button" value="Subscribe">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
         </section>
     </main>
     <footer>
