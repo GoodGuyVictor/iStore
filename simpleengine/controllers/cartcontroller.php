@@ -22,6 +22,7 @@ class CartController extends AbstractController
     }
 
     public function actionGetItems() {
+        session_start();
         $auth = new Authentication($_SESSION['email']);
         $userId = $auth->getIdByEmail();
         $usersCart = new UsersCart($userId);
@@ -30,6 +31,7 @@ class CartController extends AbstractController
     }
 
     public function actionDelete() {
+        session_start();
         $auth = new Authentication($_SESSION['email']);
         $userId = $auth->getIdByEmail();
         $user = new User($userId);
@@ -42,6 +44,7 @@ class CartController extends AbstractController
     }
 
     public function actionDeleteAll() {
+        session_start();
         $auth = new Authentication($_SESSION['email']);
         $userId = $auth->getIdByEmail();
         $user = new User($userId);
@@ -53,13 +56,18 @@ class CartController extends AbstractController
     }
 
     public function actionAdd() {
-        $auth = new Authentication($_SESSION['email']);
-        $userId = $auth->getIdByEmail();
-        $user = new User($userId);
-        try {
-            $user->addItemToCart($_POST['id_product'], $_POST['product_price']);
-        } catch (\Exception $e) {
-            echo $e->getMessage();
+        session_start();
+        if(key_exists('email', $_SESSION) && $_SESSION['email']) {
+            $auth = new Authentication($_SESSION['email']);
+            $userId = $auth->getIdByEmail();
+            $user = new User($userId);
+            try {
+                $user->addItemToCart($_POST['id_product'], $_POST['product_price']);
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+        }else {
+            $_SESSION['error'] = 'To add items to cart you should be logged in';
         }
     }
 
