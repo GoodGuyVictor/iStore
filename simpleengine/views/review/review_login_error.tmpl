@@ -9,78 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
-    <script>
-        $(document).ready(function() {
-           $('#login').on('click', function () {
-               var email = $('#email').val();
-               var password = $('#password').val();
-
-               $.ajax({
-                   url: '/user/login/',
-                   type: 'POST',
-                   data: {"email": email, "password": password},
-                   success: function() {
-                       location.href = '/review/login/'
-                   }
-               })
-           })
-        });
-    </script>
-    <style type="text/css">
-        .wrapper {
-            width: 400px;
-            border: 1px solid #DDDDDD;
-            border-radius: 5px;
-            padding: 10px 20px;
-            margin: 0 auto;
-            margin-top: 30px;
-        }
-
-        .fLeft {
-            float: left;
-        }
-
-        .logo {
-            width: 150px;
-            height: 40px;
-            margin: 0 auto;
-            margin-top: 80px;
-        }
-
-        .logo-text {
-            font-size: 140%;
-            padding-top: 15px;
-            margin-left: 10px;
-        }
-
-        #login {
-            width: 100%;
-            background: #f38191;
-            border-radius: 3px;
-            padding: 6px 15px;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        #login:hover {
-            background: #f45a6f;
-        }
-
-        .wrapper-error {
-            width: 400px;
-            border: 1px solid #AD1616;
-            border-radius: 5px;
-            padding: 10px 20px;
-            margin: 0 auto;
-            margin-top: 30px;
-        }
-
-        .red {
-            color: #AD1616;
-        }
-
-    </style>
+    <script src="../../../public/js/review_loggedin_error/review_loggedin_error-main.js"></script>
+    <link rel="stylesheet" href="../../../public/css/review_loggedin_error/review_loggedin_error_styles.css">
 </head>
 <body>
 <div class="logo">
