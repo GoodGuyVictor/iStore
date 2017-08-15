@@ -1,0 +1,52 @@
+.wrapper-error {
+    width: 400px;
+    border: 1px solid #AD1616;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.red {
+    color: #AD1616;
+}
+
+.wrapper {
+    width: 400px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.fLeft {
+    float: left;
+}
+
+.logo {
+    width: 150px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.logo-text {
+    font-size: 140%;
+    padding-top: 15px;
+    margin-left: 10px;
+}
+
+#signup {
+    width: 100%;
+    background: #f38191;
+    border-radius: 3px;
+    padding: 6px 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#signup:hover {
+    background: #f45a6f;
+}
