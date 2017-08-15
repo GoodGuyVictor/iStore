@@ -9,7 +9,7 @@
 namespace simpleengine\controllers;
 
 
-class SubmitController extends AbstractController
+class SubmittedController extends AbstractController
 {
 
     public function actionIndex()
