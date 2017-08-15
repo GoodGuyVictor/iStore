@@ -4,7 +4,7 @@
     <title>Brand</title>
     <!--Bootstrap 3-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/css/index_loggedin/styles1.3.css">
+    <link rel="stylesheet" href="../../../public/css/index_loggedin/index_loggedin_styles.css">
     <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -12,82 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
     <script src="../../../public/js/cart/cart.js"></script>
-    <style type="text/css">
-        .fa-check {
-            display: none;
-            font-size: 400%;
-            position: absolute;
-            top: 130px;
-            left: 150px;
-            color: white;
-        }
-    </style>
-    <script>
-        function checkGoodsThatAreAlreadyInCart() {
-            for(var i = 0; i < cart.goodsCount; i++){
-                var id = cart.cartItems[i]['id_product'];
-                var addToCartBtn = $('#goods').find('#'+id);
-                addToCartBtn.parent().find('img').css('filter', 'brightness(50%)');
-                addToCartBtn.parent().find('.fa-check').show();
-                addToCartBtn.hide();
-            }
-        }
-
-        var cart = new Cart();
-        $(document).ready(function () {
-
-            checkGoodsThatAreAlreadyInCart();
-
-            $('.number-of-items-within-the-cart').text(cart.goodsCount);
-
-            $('#logout').on('click', function () {
-                $.ajax({
-                    url: '/user/logout/',
-                    type: 'POST',
-                    data: {"logout": true}
-                })
-            });
-
-//            $('.product-box').on('click', function () {
-//                var product_name = $(this).find('.product-name').text().toLowerCase();
-//                var picture = product_name.split(' ').join('_');
-//                picture += '.png';
-//                var price = $(this).find('.product-price').text().split('$')[1];
-//                var id = $(this).find('.product-id').text().split('#')[1];
-//alert('product box')
-//                $.ajax({
-//                    url: '/review/formdata/',
-//                    type: 'post',
-//                    data: {"picture": picture,
-//                        "product_name": product_name.toUpperCase(),
-//                        "price": price,
-//                        "id": id},
-//                    success: function () {
-//                        location.href = '/review/';
-//                    }
-//                });
-//            });
-
-
-            /*cart logic*/
-            $('.add-to-cart-btn').on('click', function () {
-                var id = $(this).attr('id');
-                var parent = $(this).parent();
-                var price = parent.find('.product-price').text().split('$')[1];
-
-                $.ajax({
-                    url: '/cart/add/',
-                    type: 'POST',
-                    data: {"id_product": id, "product_price": price}
-                });
-                $(this).hide();
-                parent.find('.fa-check').show();
-                parent.find('img').css('filter', 'brightness(50%)');
-                $('.number-of-items-within-the-cart').text(++cart.goodsCount);
-
-            })
-        })
-    </script>
 </head>
 <body>
     <header>
