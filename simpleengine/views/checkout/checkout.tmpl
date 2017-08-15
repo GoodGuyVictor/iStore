@@ -11,16 +11,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
-    <script src="../../../public/js/cart5.1.js"></script>
+    <script src="../../../public/js/cart/cart.js"></script>
     <script>
         $(document).ready(function () {
             $('#checkout-btn').on('click', function () {
-                alert('click')
                 $.ajax({
                     url: '/checkout/makeneworder/',
                     type: 'post',
                     success: function () {
-//                        location.href = '/submitted/';
+                        location.href = '/submitted/';
                     }
                 })
             })
@@ -383,7 +382,7 @@
             outline: 0 none;
         }
 
-        /*# sourceMappingURL=styles.css.map */
+        /*# sourceMappingURL=cart-styles.css.map */
 
     </style>
 </head>
