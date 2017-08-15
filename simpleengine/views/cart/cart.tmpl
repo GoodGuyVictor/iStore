@@ -11,11 +11,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../../public/js/container.js"></script>
-    <script src="../../../public/js/cart4.7.js"></script>
+    <script src="../../../public/js/cart5.1.js"></script>
     <script>
+
 
         $(document).ready(function () {
             var cart = new Cart();
+
+            function setSubtotal() {
+                var subtotal = 0;
+
+                for(var i = 0; i < cart.cartItems.length; i++) {
+                    subtotal += cart.cartItems[i]['product_price'] * $('#quantity-item-'+cart.cartItems[i]['id_product']).val();
+                }
+                $('.subtotal-price').text('$'+subtotal);
+            }
+
 
             $(document).on('click', '.delete', function () {
                 var product = $(this).parent().attr('id').split('-')[1];
@@ -28,8 +39,7 @@
             });
 
             $(document).on('change', 'select', function() {
-                var select = $(this).val();
-                console.log(select)
+                setSubtotal();
             });
 
             $(document).on('click', 'h4', function () {
@@ -50,6 +60,18 @@
                         location.href = '/review/';
                     }
                 });
+            });
+
+            $('#proceed-to-checkout').on('click', function () {
+                var amount = $('.subtotal-price').text().split('$')[1];
+                $.ajax({
+                    url: '/checkout/setvalues/',
+                    type: 'post',
+                    data: {"amount": amount},
+                    success: function () {
+                        location.href = '/checkout/'
+                    }
+                })
             });
         })
     </script>
@@ -345,11 +367,11 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="proceed-to-checkout">
-<!--                         Value within span should be generated automaticaly-->
-                      <p style="font-size: 110%;"><b>SUBTOTAL:</b><span class="subtotal-price" style="padding-left: 10px; font-weight: bold; color: #f16d7f;">$150</span></p>
+<!--                         Value within span should be generated automatically-->
+                      <p style="font-size: 110%;"><b>SUBTOTAL:</b><span class="subtotal-price" style="padding-left: 10px; font-weight: bold; color: #f16d7f;"></span></p>
                       <hr>
                       <div class="proceed-to-checkout-btn">
-                        <a href="/checkout/"><button id="proceed-to-checkout"><b>PROCEED TO CHECKOUT</b></button></a>
+                        <button id="proceed-to-checkout"><b>PROCEED TO CHECKOUT</b></button>
                       </div>
                     </div>
                   </div>
@@ -384,7 +406,7 @@
               <div class="col-md-6 col-xs-6" style="text-align: center; padding: 0 50px;">
                 <hgroup>
                     <h3>SUBSCRIBE</h3>
-                    <h6>FOR OUR NEWLETTER AND PROMOTION</h6>
+                    <h6>FOR OUR NEWSLETTER AND PROMOTION</h6>
                 </hgroup>
                 <br>
                 <div class="email-box" style="width: 100%;">
