@@ -5,19 +5,398 @@
     <title>Checkout</title>
     <!--Bootstrap 3-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/styles/checkout/css/styles.css">
     <script src="https://use.fontawesome.com/df8bfca6cc.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../../public/js/container.js"></script>
+    <script src="../../../public/js/cart5.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#checkout-btn').on('click', function () {
+                alert('click')
+                $.ajax({
+                    url: '/checkout/makeneworder/',
+                    type: 'post',
+                    success: function () {
+//                        location.href = '/submitted/';
+                    }
+                })
+            })
+        })
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0; }
+
+        html, body {
+            width: 100%; }
+
+        .bold {
+            font-weight: bold; }
+
+        .wrapper {
+            padding: 0 216px; }
+
+        .fLeft {
+            float: left; }
+
+        .logo {
+            width: 200px; }
+
+        .logo-text {
+            font-size: 130%;
+            padding-top: 15px;
+            margin-left: 10px; }
+
+        header {
+            padding-top: 30px;
+            position: relative; }
+
+        .drop-down-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1; }
+
+        .drop-down-menu a {
+            display: block;
+            color: black;
+            padding: 8px 12px;
+            text-decoration: none; }
+
+        .drop-down-menu a:hover {
+            background-color: #E8E8E8; }
+
+        #header-search-bar {
+            padding: 6px 0 6px 10px;
+            width: 100%;
+            border: 1px #e6e6e6 solid;
+            border-right: none;
+            border-left: none; }
+
+        .drop-down-btn {
+            border: 1px #e6e6e6 solid;
+            background: #f5f5f5;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            padding: 0 4px; }
+
+        .drop-down-btn:hover {
+            background: #e6e6e6; }
+
+        #header-search-btn{padding:6px 10px;border:1px solid #e6e6e6;background:#f5f5f5;border-top-right-radius:3px;border-bottom-right-radius:3px;cursor:pointer}
+
+        #header-search-btn:hover {
+            background: #e6e6e6; }
+
+        #cart {
+            margin-right: 20px;
+            cursor: pointer; }
+
+        #myAccount-btn {
+            border: none;
+            background: #f38191;
+            padding: 6px 15px;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer; }
+
+        #myAccount-btn:hover {
+            background: #f45a6f; }
+
+        .account {
+            padding-top: 7px; }
+
+        .search-box {
+            padding-top: 7px; }
+
+        ul {
+            list-style-type: none;
+            margin-top: -17px; }
+
+        li a {
+            float: left;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold; }
+
+        li a:hover {
+            background: #E8E8E8;
+            text-decoration: none;
+            color: black; }
+
+        #header-menu {
+            width: 690px;
+            margin: 0 auto; }
+
+        #subscribe {
+            position: relative;
+            padding-top: 100px;
+            margin-top: 80px;
+            display: block;
+            height: 438px; }
+
+        #subscribe:after {
+            content: "";
+            background-image: url("/public/pics/index/Rectangle 9.png");
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1; }
+
+        .right-section {
+            text-align: center; }
+
+        .email-bar input {
+            width: 250px;
+            background: #eaeaea;
+            border: none;
+            padding: 10px 0 10px 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            outline: none; }
+
+        .subscribe-btn input {
+            border: none;
+            padding: 10px 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background: #f38191;
+            color: white;
+            cursor: pointer; }
+
+        .subscribe-btn input:hover {
+            background: #f45a6f; }
+
+        footer {
+            padding-top: 100px; }
+
+        footer h5 {
+            color: #f38191; }
+
+        footer a {
+            color: grey;
+            text-decoration: none; }
+
+        footer a:hover {
+            text-decoration: none;
+            color: grey; }
+
+        #copyright {
+            background: #e6e6e6;
+            height: 50px;
+            padding-top: 14px; }
+
+        .network-button {
+            padding-top: 3px;
+            text-align: center;
+            background: white;
+            margin-right: 7px;
+            height: 30px;
+            width: 30px;
+            float: left; }
+
+        .network-button:hover {
+            color: white;
+            background: #f45a6f; }
+
+        .drop-down {
+            position: relative;
+            width: 100%;
+            height: 34px; }
+
+        .show {
+            display: block; }
+
+        .new-arrivals {
+            background: #f8f3f4;
+            height: 150px; }
+
+        #new-arrivals {
+            position: relative;
+            top: 60px;
+            font-size: 120%;
+            font-weight: bold;
+            color: #f16d7f;
+            float: left; }
+
+        #login-btn {
+            border: 1px #e6e6e6 solid;
+            background: white;
+            padding: 10px 25px;
+            margin-right: 20px; }
+
+        #login-btn:hover {
+            background: #e6e6e6; }
+
+        #checkout-btn {
+            border: 1px #e6e6e6 solid;
+            background: white;
+            padding: 10px 25px; }
+
+        #checkout-btn:hover {
+            background: #e6e6e6; }
+
+        #checkout {
+            padding-top: 60px; }
+
+        #shopping-cart {
+            padding-top: 100px; }
+
+        .panel input[type=email], input[type=password] {
+            width: 80%;
+            padding: 10px 10px;
+            font-size: 125%; }
+
+        .panel small {
+            color: grey; }
+
+        .fRight {
+            float: right;
+        }
+
+        .responsive-header {
+            position: absolute;
+            display: none;
+            width: 100%; }
+
+        .logo-responsive {
+            float: left;
+            background: #222222;
+            padding: 15px 17px 15px 10px; }
+        .logo-responsive img {
+            width: 40px; }
+
+        .search-button-responsive {
+            cursor: pointer;
+            float: left;
+            padding: 20px;
+            font-size: 180%; }
+
+        .burger-menu {
+            cursor: pointer;
+            border: none;
+            font-size: 280%;
+            padding: 3px 12px;
+            background: transparent; }
+
+        .account-responsive {
+            padding: 14px; }
+        .account-responsive img {
+            width: 35px; }
+
+        .cart-responsive {
+            background: #222222;
+            padding: 15px; }
+        .cart-responsive img {
+            width: 35px; }
+
+        #subscribe-responsive {
+            display: none;
+            padding: 50px 0; }
+
+
+
+        @media screen and (max-width: 1295px) {
+            .wrapper {
+                padding: 0 150px;
+            }
+        }
+
+        @media screen and (max-width: 1165px) {
+            .wrapper {
+                padding: 0 80px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            header {
+                padding: 0;
+            }
+
+            .desktop-header {
+                display: none;
+            }
+
+            .responsive-header {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #subscribe-responsive {
+                display: block; }
+
+            .right-section {
+                display: none; }
+
+            .left-section {
+                text-align: center; }
+
+            footer .wrapper {
+                padding: 0 100px;
+            }
+        }
+
+        #sub-button {
+            outline: none;
+        }
+
+        .checkout-content {
+            width: 50%;
+        }
+
+        .form-control:focus {
+            border-color: #F38191;
+            box-shadow: 0 1px 1px #F38191 inset, 0 0 8px #F38191;
+            outline: 0 none;
+        }
+
+        #continue {
+            border: none;
+            background: #f38191;
+            padding: 6px 15px;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #continue:hover {
+            background: #f45a6f;
+        }
+
+        #header-search-bar:focus {
+            border-color: #F38191;
+            box-shadow: 0 1px 1px #F38191 inset, 0 0 8px #F38191;
+            outline: 0 none;
+        }
+
+        /*# sourceMappingURL=styles.css.map */
+
+    </style>
 </head>
 <body>
-   <header>
-      <div class="desktop-header">
-       <div class="wrapper">
-           <div class="row">
-               <div class="col-md-3">
+<header>
+    <div class="desktop-header">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-3">
                     <div class="logo">
-                       <a href=".." style="color: black; text-decoration: none;">
+                        <a href="../" style="color: black; text-decoration: none;">
                             <div class="banner fLeft">
-                                <img src="../../../public/pics/checkout/pics/Group%202.png" alt="...">
+                                <img src="../../../public/pics/cart/pics/Group%202.png" alt="...">
                             </div>
                             <div class="logo-text fLeft">
                                 BRAN<span style="font-weight: bold; color: #F38191;">D</span>
@@ -27,8 +406,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="search-box">
-                        <div class="row">    
-                            <div class="col-md-2" style="padding: 0;">                    
+                        <div class="row">
+                            <div class="col-md-2" style="padding: 0;">
                                 <div class="drop-down">
                                     <button class="drop-down-btn">Browse <i class="fa fa-caret-down" aria-hidden="true"></i></button>
                                     <div class="drop-down-menu">
@@ -52,23 +431,7 @@
                             </div>
                         </div>
                     </div>
-               </div>
-               <div class="col-md-3">
-                    <div class="account">
-                       <div class="row">
-                           <div class="col-sm-3">
-                                <div id="cart">
-                                    <img src="../../../public/pics/checkout/pics/Forma%201.png" alt="...">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div id="myAccount">
-                                    <button id="myAccount-btn">My Account <i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                                </div>
-                           </div>
-                        </div>
-                    </div>
-               </div>
+                </div>
             </div>
         </div>
         <div style="clear: both;"></div>
@@ -84,36 +447,36 @@
                 <li><a href="#">HOT DEAL</a></li>
             </ul>
         </nav>
-            <div style="clear: both;"></div>
-        </div>
-        <div class="responsive-header">
-            <div class="left-container fLeft">
-                <a href="#">
-                    <div class="logo-responsive">
-                        <img src="../../../public/pics/checkout/pics/Group%202.png" alt="...">
-                    </div>
-                </a>
-                <div class="search-button-responsive">
-                    <i class="fa fa-search" aria-hidden="true"></i>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="responsive-header">
+        <div class="left-container fLeft">
+            <a href="#">
+                <div class="logo-responsive">
+                    <img src="../../../public/pics/cart/pics/Group%202.png" alt="...">
                 </div>
-            </div>
-            <div class="right-container fRight">
-                <button class="burger-menu fLeft">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </button>
-                <a href="#">
-                    <div class="account-responsive fLeft">
-                        <img src="../../../public/pics/checkout/pics/account-responsive.png" alt="...">
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="cart-responsive fLeft">
-                        <img src="../../../public/pics/checkout/pics/cart-resp.png" alt="...">
-                    </div>
-                </a>
+            </a>
+            <div class="search-button-responsive">
+                <i class="fa fa-search" aria-hidden="true"></i>
             </div>
         </div>
-    </header>
+        <div class="right-container fRight">
+            <button class="burger-menu fLeft">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <a href="#">
+                <div class="account-responsive fLeft">
+                    <img src="../../../public/pics/cart/pics/account-responsive.png" alt="...">
+                </div>
+            </a>
+            <a href="#">
+                <div class="cart-responsive fLeft">
+                    <img src="../../../public/pics/cart/pics/cart-resp.png" alt="...">
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
     <div style="clear: both;"></div>
     <main>
       <section id="checkout">
@@ -142,17 +505,26 @@
               <br>
               <label for="country">Country:</label>
               <select name="country" id="country" class="form-control">
-                <option value="1">1</option>
-                <option value="1">1</option>
-                <option value="1">1</option>
-                <option value="1">1</option>
-                <option value="1">1</option>
+                <option value="australia">Australia</option>
+                <option value="czech-republic">Czech Republic</option>
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="hungary">Hungary</option>
+                <option value="ireland">Ireland</option>
+                <option value="japan">Japan</option>
+                <option value="lithuania">Lithuania</option>
+                <option value="oae">OAE</option>
+                <option value="poland">Poland</option>
+                <option value="russia">Russia</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="usa">USA</option>
+                <option value="zimbabwe">Zimbabwe</option>
               </select>
               <br>
               <label for="phone">Phone number:</label>
               <input name="phone" type="text" class="form-control" id="phone">
               <hr>
-              <button type="submit" id="continue">Continue</button>
+              <button type="button" id="checkout-btn">Checkout</button>
             </form>
           </div>
         </div>
