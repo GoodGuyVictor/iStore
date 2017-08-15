@@ -1,3 +1,16 @@
+.wrapper-error {
+  width: 400px;
+  border: 1px solid #AD1616;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: none;
+}
+
+.red {
+  color: #AD1616;
+}
 
 .wrapper {
   width: 400px;
@@ -32,7 +45,7 @@
   padding: 6px 15px;
   border: none;
   color: white;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 #signup:hover {
