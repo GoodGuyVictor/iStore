@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alex
- * Date: 03.07.2017
- * Time: 20:29
- */
+
 
 namespace simpleengine\models;
 
