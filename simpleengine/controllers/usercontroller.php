@@ -22,7 +22,6 @@ class UserController extends AbstractController
     }
 
     public function actionLogin() {
-        echo "user controller";
         session_start();
         if(key_exists('email', $_POST) && $_POST['email'] != "") {
             if(key_exists('password', $_POST) && $_POST['password'] != "") {
@@ -37,9 +36,9 @@ class UserController extends AbstractController
                     $_SESSION['password'] = $_POST['password'];
                 }
             }else
-                $_SESSION['error'] = "Please enter your password";
+                $_SESSION['error'] = "Password is mandatory";
         }else
-            $_SESSION['error'] = "Please enter your email";
+            $_SESSION['error'] = "Email is mandatory field";
     }
 
     public function actionLogout() {
