@@ -36,7 +36,7 @@ class Registration implements DbModelInterface
 
     /**
      * @return string
-     * returns error message in case if everything is fine empty string is returned
+     * returns error message, in case if everything is fine empty string is returned
      */
     public function makeRegistration() {
         if(!$this->emailExists()) {
@@ -77,7 +77,7 @@ class Registration implements DbModelInterface
     {
         $app = Application::instance();
         $id = $this->generateNewId();
-        $sql = "INSERT INTO users VALUES('".$id."', '".$this->firstname."', '".$this->lastname."', '".$this->email."', '".$this->pass1."')";
+        $sql = "INSERT INTO users (firstname, lastname, email, password) VALUES('".$this->firstname."', '".$this->lastname."', '".$this->email."', '".$this->pass1."')";
 
         if(!$app->db()->insertDataToDb($sql))
             throw new RegistrationException("We experience technical problems. Please try again later.");
