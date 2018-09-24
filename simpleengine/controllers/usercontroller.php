@@ -9,7 +9,6 @@
 namespace simpleengine\controllers;
 
 
-use Prophecy\Doubler\LazyDouble;
 use simpleengine\core\Application;
 use simpleengine\core\Db;
 use simpleengine\models\Authentication;
@@ -23,6 +22,7 @@ class UserController extends AbstractController
     }
 
     public function actionLogin() {
+        echo "user controller";
         session_start();
         if(key_exists('email', $_POST) && $_POST['email'] != "") {
             if(key_exists('password', $_POST) && $_POST['password'] != "") {
