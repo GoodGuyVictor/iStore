@@ -5,7 +5,7 @@ function checkGoodsThatAreAlreadyInCart() {
     for(var i = 0; i < cart.goodsCount; i++){
         var id = cart.cartItems[i]['id_product'];
         var addToCartBtn = $('#goods').find('#'+id);
-        addToCartBtn.parent().find('img').css('filter', 'brightness(50%)');
+        addToCartBtn.parent().parent().find('img').css('filter', 'brightness(50%)');
         addToCartBtn.parent().find('.fa-check').show();
         addToCartBtn.hide();
     }
@@ -29,7 +29,7 @@ $(document).ready(function () {
     /*cart logic*/
     $('.add-to-cart-btn').on('click', function () {
         var id = $(this).attr('id');
-        var parent = $(this).parent();
+        var parent = $(this).parent().parent();
         var price = parent.find('.product-price').text().split('$')[1];
 
         $.ajax({

@@ -113,7 +113,7 @@ Cart.prototype.render = function() {
         });
 
         var img = $('<img />', {
-            src: '../../../public/pics/cart/products/'+this.cartItems[i]['picture'],
+            src: '/pics/cart/products/'+this.cartItems[i]['picture'],
             alt: '...'
         });
 
