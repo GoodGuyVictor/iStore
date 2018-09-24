@@ -19,10 +19,6 @@ class User implements DbModelInterface
         }
     }
 
-    public function auth(){
-
-    }
-
     public function find($id)
     {
         $app = Application::instance();
