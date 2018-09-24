@@ -33,7 +33,7 @@ abstract class AbstractController
             throw new ApplicationException("Template " . $dir . $template . " not found", 0504);
         }
 
-        return $twig->render($template.".tmpl", $variables);
+        return $twig->render($template.".html", $variables);
     }
 
     public function setRequestedAction(string $actionName){
