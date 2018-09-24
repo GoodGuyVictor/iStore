@@ -1,13 +1,13 @@
 <?php
-// Подключаем автозагрузчик
+// Including autoload
 require(__DIR__ . "/../vendor/autoload.php");
 require(__DIR__ . "/../simpleengine/core/autoload.php");
 
-// Подключаем конфигурацию
+// Including configuration
 $configuration = [];
 require(__DIR__ . "/../configuration/main.config.php");
 
-// Стартуем приложение
+// Running application
 try {
     session_start();
     $app = simpleengine\core\Application::instance();
