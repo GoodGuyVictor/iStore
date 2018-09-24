@@ -1,21 +1,20 @@
 <?php
 $configuration = [];
 
-// Настройки окружения
+// Environment settings
 $configuration["ENVIRONMENT"] = "PROD";
 
-// настройки директорий
+// Directories settings
 $configuration["DIR"]["VIEWS"] = $_SERVER["DOCUMENT_ROOT"]."/../simpleengine/views/";
 
-// Настройки БД
-//$configuration["DB"]["DB_HOST"] = "192.168.56.101"; // server
+// Database settings
 $configuration["DB"]["DB_HOST"] = "localhost"; // server
 $configuration["DB"]["DB_USER"] = "root"; // login
 $configuration["DB"]["DB_PASS"] = ""; // password
 $configuration["DB"]["DB_NAME"] = "estore"; // DB name
 $configuration["DB"]["DB_CHARSET"] = "UTF8";
 
-// Настройки роутинга
+// Routing settings
 $configuration["ROUTER"] = [
     "customController/<action>" => "controllers/CustomController/<action>",
     "hello/<action>" => "controllers/HelloController/<action>",
