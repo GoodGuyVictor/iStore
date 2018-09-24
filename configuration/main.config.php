@@ -8,11 +8,12 @@ $configuration["ENVIRONMENT"] = "PROD";
 $configuration["DIR"]["VIEWS"] = $_SERVER["DOCUMENT_ROOT"]."/../simpleengine/views/";
 
 // Настройки БД
-$configuration["DB"]["DB_HOST"] = "192.168.56.101"; // сервер БД
-$configuration["DB"]["DB_USER"] = "root"; // логин
-$configuration["DB"]["DB_PASS"] = "geekbrains"; // пароль
-$configuration["DB"]["DB_NAME"] = "istore"; // имя БД
-$configuration["DB"]["DB_CHARSET"] = "UTF8"; // имя БД
+//$configuration["DB"]["DB_HOST"] = "192.168.56.101"; // server
+$configuration["DB"]["DB_HOST"] = "localhost"; // server
+$configuration["DB"]["DB_USER"] = "root"; // login
+$configuration["DB"]["DB_PASS"] = ""; // password
+$configuration["DB"]["DB_NAME"] = "estore"; // DB name
+$configuration["DB"]["DB_CHARSET"] = "UTF8";
 
 // Настройки роутинга
 $configuration["ROUTER"] = [
