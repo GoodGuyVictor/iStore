@@ -4,7 +4,7 @@
   3. Run: `composer require "twig/twig:^2.0"`
   
 # List of user technologies
-  -Twig template engine
-  -Bootstrap
-  -AJAX
-  -JQuery
+  - Twig template engine
+  - Bootstrap
+  - AJAX
+  - JQuery
